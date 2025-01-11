@@ -1,0 +1,14 @@
+{
+    "name": "LaTeX upTeX Env",
+    // 事前に、my-latex-image をDockerfileからビルドする必要がある。
+    "image": "latex-uptex-env",
+    // VSCode拡張機能をコンテナ側にインストール
+    "extensions": [
+      "James-Yu.latex-workshop" // LaTeX Workshop
+    ],
+    // コンテナが起動したときのデフォルトユーザ (rootのままでも可)
+    "remoteUser": "root",
+    // ワークスペースフォルダ: コンテナ内では /work を使う
+    "workspaceFolder": "/work"
+  }
+  

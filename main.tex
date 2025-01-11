@@ -1,0 +1,230 @@
+%-------------------------------------
+%        卒論のLaTeX用ひな形
+%           制作 宮川ゼミ
+%             2014/02
+%-------------------------------------
+\documentclass[uplatex,a4j,11pt]{jsarticle}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{setspace}\setstretch{1.3}
+\usepackage{calc}
+\usepackage[textwidth=38zw, textheight=29\baselineskip+\topskip,heightrounded,dvipdfmx]{geometry}
+\usepackage{okumacro}
+\usepackage[yen]{jsverb}
+%\usepackage{natbib}
+%\usepackage{bm,mathrsfs}
+
+%--------   章，節  ----------------------------
+\usepackage[medium,raggedright]{titlesec}
+
+\newcommand{\sectionbreak}{\clearpage}%  章が変われば改ページ
+% \newcommand{\subsectionbreak}{\vspace*{2\baselineskip}}%  節が変われば２行挿入
+
+%--------   注（章末注で）  ---------------
+\usepackage{endnotes}
+\renewcommand{\footnote}{\endnote}     % footnote を endnote として使う
+\renewcommand{\notesname}{章末注}
+\renewcommand{\enotesize}{\normalsize}
+\renewcommand{\theendnote}{\arabic{endnote}}
+\renewcommand{\makeenmark}{\textsuperscript{\theenmark)}}
+
+\makeatletter
+% \def\enoteheading{\section*{\notesname % 修正前
+\def\enoteheading{\subsection*{\notesname % 修正後：章末注は節として。章の一部なので。
+  \@mkboth{\MakeUppercase{\notesname}}{\MakeUppercase{\notesname}}}%
+  \mbox{}\par\vskip-\baselineskip}
+\makeatother
+
+%-----    定理   -----------------------
+\newtheoremstyle{roman}% name
+    {8pt}%        Space above
+    {8pt}%        Space below
+    {}%           Body font
+    {}% Indent amount (e.g., empty, \parindent)
+    {\bfseries}%  Thm head font
+    {}%          Punctuation after thm head
+    {0.8zw}%      Space after thm head (e.g., " ")
+    {#1#2}%           Thm head spec (empty means `normal')
+\theoremstyle{roman}
+\newtheorem*{definition}{定義} 
+\newtheorem{assumption}{仮定}
+\newtheorem{proposition}{命題}
+\newtheorem{theorem}{定理}
+
+%------    証明   -------------------------
+\newcommand{\prooffont}{\bfseries}
+\renewcommand{\proofname}{\prooffont 証明\hspace{0.3zw}\nopunct}
+\renewcommand{\qedsymbol}{（証明終）}
+%%\newcommand{\noqed}{\renewcommand{\qedsymbol}{}}
+
+\newcommand{\E}{\mathbb{R}}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\geq}{\geqslant}
+% \usepackage{accents}
+% 	\newcommand{\ubar}[1]{{\underaccent{\bar}{#1}}}
+
+
+%----- 傍点  ---------------------------------------
+\makeatletter
+\def\kenten#1{%
+  \ifvmode\leavevmode\else\hskip\kanjiskip\fi
+  \setbox1=\hbox to \z@{・\hss}%
+  \ht1=.63zw
+  \@kenten#1\end}
+\def\@kenten#1{%
+  \ifx#1\end \let\next=\relax \else
+    \raise.63zw\copy1\nobreak #1\hskip\kanjiskip\relax
+    \let\next=\@kenten
+  \fi\next}
+\makeatother
+\newcommand{\bouten}{\kenten}	% 傍点
+
+%-------   リンク，ブックマーク   ---------
+\usepackage[dvipdfmx,bookmarkstype=toc=true,bookmarks=true,pdfpagemode=UseOutlines,
+colorlinks=true,urlcolor=black,linkcolor=black,citecolor=black,linktocpage=true,%
+pdfstartview=FitH,%
+pdfpagelayout=OneColumn,bookmarksnumbered=true,bookmarksopen=true,%
+pdfstartpage={}]{hyperref}
+\providecommand*{\phantomsection}{}
+\usepackage{pxjahyper}
+
+
+\begin{document}
+%----------------- 表紙 ---------------------
+\newcommand{\kyo}{{\number\year}年{\number\month}月{\number\day}日}
+\newcommand{\提出日}{\kyo}
+%---各自記入-----------
+\newcommand{\題目}{ゲーム理論の考察}
+\newcommand{\副題}{卒論の{\LaTeX}モデル}
+\newcommand{\学番}{123E123E}
+\newcommand{\氏名}{神戸 太郎}
+%-----------------------
+\thispagestyle{empty}
+\begin{flushright}
+{\Large \提出日 提出}\\[0.2\textheight]
+\end{flushright}
+\begin{center}
+% {\Large 研究指導論文要旨}\\[2\baselineskip]  % 要旨の表紙で必要
+{\Large 論文題目\hspace{1zw}\Huge \題目}\\[\baselineskip]
+{\Large \——\副題\——} %副題があれば
+\end{center}
+\vfill
+
+\begin{flushleft}
+\hspace{25zw}{\Large 宮川栄一研究室}\\[1zh]
+\hspace{25zw}{\Large 学籍番号\ \学番}\\[1zh]
+\hspace{25zw}{\Large 氏名\hspace{0.5zw}\氏名}
+\end{flushleft}
+\clearpage
+
+%--------    目次     ---------------
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+%--------   本文   -----------------
+\section*{序章}
+\addcontentsline{toc}{section}{序章}
+\setcounter{page}{1}
+
+% \subsection*{研究動機}
+
+このファイルは論文作成の定番ソフトである\LaTeX\ で卒論を書く場合に使えるテンプレートです。ただしこのファイルは教務係の承認を保証するものではありません。あらかじめご了承願います。自己責任で使用してください。このファイルを過信せず，卒論の作成要領を熟読して，時間に余裕をもって提出してください。よろしくお願いします。
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+二二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+
+
+
+
+
+\section{モデル}
+
+章が変わると改ページします\footnote{学部生の卒論では「脚注は30行より下に書くか，章末に書いて下さい」という決まりなので，注は章末にまとめるのがいいだろう。}。卒論関数は
+\begin{equation*}
+\label{koyo}
+	s(知, 実, 注, 見) = {知\mbox{}}^{3}{実\mbox{}}^{3} {注\mbox{}}^{3} {見\mbox{}}^{1}
+\end{equation*}
+ぐらいと仮定していいだろう。ただし「知」は内容の知的面白さ，「実」は内容の現実的重要性，「注」は卒論に注いだエネルギー，「見」は論文の見栄えです。例年の経験より以下が成り立ちます。
+\begin{theorem}
+宮川ゼミで合格するには，卒論のだいたいの内容を年内に完成しておくべし。
+\end{theorem}
+\begin{proof}
+背理法で証明する。年内に完成しないと，締切直前に大慌てで書くことになり，間違いと誤植だらけの卒論になって，ゼミで不可を得る。
+\end{proof}
+
+\subsection{消費者の行動}
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+\subsection{企業の行動}
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+
+\theendnotes %章末注
+\section{均衡}
+
+注がある章の末尾にはコマンド \verb#\theendnotes# を挿入すべし\footnote{章末注は節として扱います。}。
+
+
+\theendnotes %章末注
+\section{終章}
+
+一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十一二三四五六七八九十
+
+
+\section*{謝辞}
+\addcontentsline{toc}{section}{謝辞}
+三島大輝君の卒論ファイルを参考にしました。三島君は濱田高彰君のファイルを参考にしたそうです。先輩の知恵に感謝します。
+
+\newpage
+\addcontentsline{toc}{section}{参考文献}
+\begin{thebibliography}{99}
+%------------------------------
+
+\item ロバート・ギボンズ (1995) 『経済学のためのゲーム理論入門』
+（福岡正夫・須田伸一訳）創文社。
+
+\item 高須賀義博 (1994) 「再生産の局面分析」『経済研究』第25巻第3号，
+18--27頁。
+
+\item Moulin, H. (1983), \emph{The Strategy of Social Choice}, Amsterdam, Netherlands:
+North-Holland.
+
+\item Moore, J., and R. Repullo (1990), ``Nash Implementation: A Full Characterization,''
+\emph{Econometrica}, Vol.\ 58, No.\ 5, pp.\ 1083--1099.
+
+%-----------------------
+\end{thebibliography}
+\end{document}
