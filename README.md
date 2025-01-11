@@ -11,7 +11,9 @@ Validating the robustness of division of power with game theory.
 docker build -t latex-uptex-env .
 ```
 
-3. Run the container from the image.
+3. Open `graduation_thesis_uplatex` with VScode.
+
+4. Run the container from the image. Using a terminal of VScode is recommended.
 ```bash
 docker run --rm -it \
     -v "$(pwd)":/work \
@@ -22,6 +24,8 @@ docker run --rm -it \
 ```bash
 latexmk main.tex
 ```
+
+
 
 
 # Todo
