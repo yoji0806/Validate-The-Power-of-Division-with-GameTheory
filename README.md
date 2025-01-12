@@ -1,6 +1,11 @@
 # graduation_thesis_uplatex
-Validating the robustness of division of power with game theory.
+Validating the robustness of division of power with game theory.  
 
+
+# フォルダ
+- `material`：卒論要項、元のtexファイルなど。
+- `reference`：参考文献
+- `image`：画像ファイル
 
 # How to run
 
@@ -29,4 +34,5 @@ latexmk main.tex
 
 
 # Todo
-- `.devcontainer/devcontainer.json`に色々書き込んで、VSCodeから開くだけで、コンテナが自動で立ち上がってマウントするようにする。（2回目以降のマウントがうまくいかなかったので、後回しにした。）
+- `.devcontainer/devcontainer.json`に色々書き込んで、VSCodeから開くだけで、コンテナが自動で立ち上がってマウントするようにする。  
+（2回目以降のマウントがうまくいかなかったので、後回しにした。）
