@@ -3,6 +3,7 @@ Validating the robustness of division of power with game theory.
 
 
 # フォルダ
+- `sections`:章ごとのtexファイル。
 - `material`：卒論要項、元のtexファイルなど。
 - `reference`：参考文献
 - `image`：画像ファイル

@@ -24,7 +24,7 @@
 \usepackage[medium,raggedright]{titlesec}
 
 \newcommand{\sectionbreak}{\clearpage}%  章が変われば改ページ
-% \newcommand{\subsectionbreak}{\vspace*{2\baselineskip}}%  節が変われば２行挿入
+\newcommand{\subsectionbreak}{\vspace*{2\baselineskip}}%  節が変われば２行挿入
 
 %--------   注（章末注で）  ---------------
 \usepackage{endnotes}
@@ -105,6 +105,10 @@ pdfstartpage={}]{hyperref}
 
 
 \subfile{sections/title}
+
+\subfile{sections/abstract}
+
+\subfile{sections/toc}
 
 \subfile{sections/introduction}
 
