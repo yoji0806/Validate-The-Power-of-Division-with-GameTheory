@@ -1,0 +1,37 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+%----------------- 表紙 ---------------------
+\newcommand{\kyo}{{\number\year}年{\number\month}月{\number\day}日}
+\newcommand{\提出日}{\kyo}
+%---各自記入-----------
+\newcommand{\題目}{権力分立の堅牢性}
+\newcommand{\副題}{ゲーム理論による分析}
+\newcommand{\学番}{1762247E}
+\newcommand{\氏名}{山本　燿司}
+%-----------------------
+\thispagestyle{empty}
+\begin{flushright}
+{\Large \提出日 提出}\\[0.2\textheight]
+\end{flushright}
+\begin{center}
+% {\Large 研究指導論文要旨}\\[2\baselineskip]  % 要旨の表紙で必要
+{\Large \hspace{1zw}\Huge \題目}\\[\baselineskip]
+{\Large \——\副題\——} %副題があれば
+\end{center}
+\vfill
+
+\begin{flushleft}
+\hspace{25zw}{\Large 宮川栄一研究室}\\[1zh]
+\hspace{25zw}{\Large 学籍番号\ \学番}\\[1zh]
+\hspace{25zw}{\Large 氏名\hspace{0.5zw}\氏名}
+\end{flushleft}
+\clearpage
+
+%--------    目次     ---------------
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+
+\end{document}
