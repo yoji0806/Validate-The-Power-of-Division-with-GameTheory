@@ -4,9 +4,10 @@
 \section{均衡}
 
 
-\subsection{平時における国会の最適反応}
+\subsection{市民が愚民である場合の、国会の最適反応}
 
-
+仮定5より、市民が愚民である場合は、平時でも有事でも国会は即時的政策($B$)を選好する。
+よって、愚民である場合は$a_{国会}=B$が支配戦略になる。
 
 
 \subsection{内閣の最適反応}
@@ -16,12 +17,12 @@
 実際の$T$が$T^*$よりも大きいか小さいかで、内閣の最適反応は変化する。
 $T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}$が存在する。
 よって内閣の戦略は、世界の状態$W$と、$T$と$T^*$の大小関係によって戦略は場合分けされる。
-具体的には
+具体的には、以下の4パターンでそれぞれ投資的政策($A$)を主張するか、即時的政策($B$)を主張するかを選択する。
 \begin{align*}
     & W=有事 かつ T^*_{有事}>T  \\
     & W=有事 かつ T^*_{有事}<T  \\
     & W=平時 かつ T^*_{平時}>T  \\
-    & W=平時 かつ T^*_{平時}<T  \\
+    & W=平時 かつ T^*_{平時}<T  
 \end{align*}
 
 
@@ -29,10 +30,10 @@ $T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}
 内閣の最適戦略は国会の最適戦略に依存する。しかし、国会の最適戦略も同じように内閣の最適戦略に依存している。
 そこで、国会の行動に対する確率を以下のように一旦仮置きして計算を進める。
 \begin{align*}
-    & P(a_{国会} = A| m_{内閣} = A) = x \\
-    & P(a_{国会} = A| m_{内閣} = B) = 1-x \\
-    & P(a_{国会} = B| m_{内閣} = A) = y \\
-    & P(a_{国会} = B| m_{内閣} = B) = 1-y \\
+    & P(a_{国会} = A| m_{内閣} = A, \delta_{市民} = \delta_H ) = x \\
+    & P(a_{国会} = B| m_{内閣} = A, \delta_{市民} = \delta_H ) = 1-x \\
+    & P(a_{国会} = A| m_{内閣} = B, \delta_{市民} = \delta_H ) = y \\
+    & P(a_{国会} = B| m_{内閣} = B, \delta_{市民} = \delta_H ) = 1-y
 \end{align*}
 
 まず、$T^*_{有事}, T^*_{平時}$を求めて、その存在区間から導かれる条件を明らかにする。
@@ -41,28 +42,66 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=有事)]\\
     & = q\lbrace \\
-    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
+    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
     & \quad\quad \rbrace\\
-    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
 \end{align*}
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=B|W=有事)]\\
     & = q\lbrace \\
-    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
+    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
     & \quad\quad \rbrace\\
-    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
 \end{align*}
 
 この差分は、
 \begin{align*}
-    & E[u_{内閣}(m_内閣=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)]\\
+    & E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)]\\
     & = q\lbrace \\
-    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
-    & \quad\quad \rbrace\\
-    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+    & \quad\quad T\alpha(x-y) + V_{A1}(x-y) + \delta_{内閣}V'_{A2}(x-y) - TV_{A1}(x-y) - T\delta_{内閣}V'_{A2}(x-y) \\
+    & \quad\quad -T\beta(x-y) - V_{B1}(x-y) - \delta_{内閣}V_{B2}(x-y) + TV_{B1}(x-y) + T\delta_{内閣}V_{B2}(x-y)\\
+    & \quad\quad  \rbrace\\
+    & = q(x-y) \lbrace T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
+                +V_{A1} - V_{B1} + \delta_{内閣}(V'_{A2} - V_{B2}) \rbrace
 \end{align*}
 
+この差分が$=0$になる時が、2つの行動が無差別になる状態$T^*_{有事}$なので
+\begin{gather*}
+    E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] = 0　\\
+    q(x-y) \lbrace T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
+                +V_{A1} - V_{B1} + \delta_{内閣}(V'_{A2} - V_{B2})  \rbrace = 0 \\
+    T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
+    = V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}　\\
+    T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }
+        = T^*_{有事}
+\end{gather*}
 
+次に$T^*_{平時}$も同じように求める。平時における各行動の期待値の差分は、
+\begin{align*}
+    & E[u_{内閣}(m_{内閣}=A|W=平時)] - E[u_{内閣}(m_{内閣}=B|W=平時)]\\
+    & = q\lbrace \\
+    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
+    & \quad\quad \rbrace\\
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace\\
+    & - q\lbrace \\
+    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
+    & \quad\quad \rbrace\\
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace\\
+    & = qx \lbrace T\alpha + V_{A1} + \delta_{内閣}V_{A2} - TV_{A1} - T\delta_{内閣}V_{A2} - T\beta -V_{B1} -\delta_{内閣}V_{B2} + TV_{B1} + T\delta_{内閣}V_{B2} \rbrace\\
+    & \quad -qy\lbrace T\alpha + V_{A1} + \delta_{内閣}V_{A2} - TV_{A1} - T\delta_{内閣}V_{A2} - T\beta -V_{B1} -\delta_{内閣}V_{B2} + TV_{B1} + T\delta_{内閣}V_{B2} \rbrace\\
+    & = q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace
+\end{align*}
+
+この差分が$=0$になる時が、2つの行動が無差別になる状態$T^*_{平時}$なので
+\begin{gather*}
+    T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2} = 0\\
+    T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }
+    = T^*_{平時}
+\end{gather*}
+
+まとめると、
+\begin{definition} $T^*_{有事} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+\begin{definition} $T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
 
 
 
