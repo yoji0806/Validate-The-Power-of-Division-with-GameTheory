@@ -4,11 +4,71 @@
 \section{均衡}
 
 
-\subsection{国会の最適反応}
+\subsection{平時における国会の最適反応}
 
-asd
+
+
 
 \subsection{内閣の最適反応}
+
+内閣の戦略のパターン数は、私的情報の$W=\lbrace 有事, 平時\rbrace, T\in[0,1]$によって決まる。
+私欲パラメーターの$T$は連続変数であるため、内閣にとって$m_{内閣}=A,m_{内閣}=B$が無差別となる境目$T^*$が存在する。
+実際の$T$が$T^*$よりも大きいか小さいかで、内閣の最適反応は変化する。
+$T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}$が存在する。
+よって内閣の戦略は、世界の状態$W$と、$T$と$T^*$の大小関係によって戦略は場合分けされる。
+具体的には
+\begin{align*}
+    & W=有事 かつ T^*_{有事}>T  \\
+    & W=有事 かつ T^*_{有事}<T  \\
+    & W=平時 かつ T^*_{平時}>T  \\
+    & W=平時 かつ T^*_{平時}<T  \\
+\end{align*}
+
+
+
+内閣の最適戦略は国会の最適戦略に依存する。しかし、国会の最適戦略も同じように内閣の最適戦略に依存している。
+そこで、国会の行動に対する確率を以下のように一旦仮置きして計算を進める。
+\begin{align*}
+    & P(a_{国会} = A| m_{内閣} = A) = x \\
+    & P(a_{国会} = A| m_{内閣} = B) = 1-x \\
+    & P(a_{国会} = B| m_{内閣} = A) = y \\
+    & P(a_{国会} = B| m_{内閣} = B) = 1-y \\
+\end{align*}
+
+まず、$T^*_{有事}, T^*_{平時}$を求めて、その存在区間から導かれる条件を明らかにする。
+
+$T^*_{有事}$は、有事において内閣の期待効用が無差別となる状態である。有事における各行動の期待効用は
+\begin{align*}
+    & E[u_{内閣}(m_{内閣}=A|W=有事)]\\
+    & = q\lbrace \\
+    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
+    & \quad\quad \rbrace\\
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+\end{align*}
+\begin{align*}
+    & E[u_{内閣}(m_{内閣}=B|W=有事)]\\
+    & = q\lbrace \\
+    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
+    & \quad\quad \rbrace\\
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+\end{align*}
+
+この差分は、
+\begin{align*}
+    & E[u_{内閣}(m_内閣=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)]\\
+    & = q\lbrace \\
+    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace \\
+    & \quad\quad \rbrace\\
+    & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta V_{B2}) \rbrace
+\end{align*}
+
+
+
+
+
+\subsection{国会の最適反応}
+
+
 
 
 
