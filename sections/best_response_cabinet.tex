@@ -40,16 +40,16 @@ $T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}
 $T^*_{有事}$は、有事において内閣の期待効用が無差別となる状態である。有事における各行動の期待効用は
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=有事)]\\
-    & = q\lbrace \\
-    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
-    & \quad\quad \rbrace\\
+    & = q\Big\lbrace 
+        x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace 
+        \Big\rbrace\\
     & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
 \end{align*}
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=B|W=有事)]\\
-    & = q\lbrace \\
-    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
-    & \quad\quad \rbrace\\
+    & = q\Big\lbrace
+        y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V'_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace 
+        \Big\rbrace\\
     & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
 \end{align*}
 
@@ -57,10 +57,10 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
 この差分は、
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)]\\
-    & = q\lbrace \\
-    & \quad\quad T\alpha(x-y) + V_{A1}(x-y) + \delta_{内閣}V'_{A2}(x-y) - TV_{A1}(x-y) - T\delta_{内閣}V'_{A2}(x-y) \\
-    & \quad\quad -T\beta(x-y) - V_{B1}(x-y) - \delta_{内閣}V_{B2}(x-y) + TV_{B1}(x-y) + T\delta_{内閣}V_{B2}(x-y)\\
-    & \quad\quad  \rbrace\\
+    & = q\Big\lbrace
+        T\alpha(x-y) + V_{A1}(x-y) + \delta_{内閣}V'_{A2}(x-y) - TV_{A1}(x-y) - T\delta_{内閣}V'_{A2}(x-y) \\
+    &   \quad\quad -T\beta(x-y) - V_{B1}(x-y) - \delta_{内閣}V_{B2}(x-y) + TV_{B1}(x-y) + T\delta_{内閣}V_{B2}(x-y)
+        \Big\rbrace\\
     & = q(x-y) \lbrace T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
                 +V_{A1} - V_{B1} + \delta_{内閣}(V'_{A2} - V_{B2}) \rbrace
 \end{align*}
@@ -72,21 +72,23 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
     q(x-y) \lbrace T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
                 +V_{A1} - V_{B1} + \delta_{内閣}(V'_{A2} - V_{B2})  \rbrace = 0 \\
     T(\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}) 
-    = V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}　\\
-    T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }
-        = T^*_{有事}
+    = V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}
 \end{gather*}
+よって、
+$$T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }
+= T^*_{有事}$$
+
 
 次に$T^*_{平時}$も同じように求める。平時における各行動の期待値の差分は、
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=平時)] - E[u_{内閣}(m_{内閣}=B|W=平時)]\\
-    & = q\lbrace \\
-    & \quad\quad x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
-    & \quad\quad \rbrace\\
+    & = q\Big\lbrace
+        x \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-x)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace 
+        \Big\rbrace\\
     & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace\\
-    & - q\lbrace \\
-    & \quad\quad y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace \\
-    & \quad\quad \rbrace\\
+    & \quad - q\Big\lbrace
+        y \lbrace T\alpha + (1-T)(V_{A1} + \delta_{内閣} V_{A2}) \rbrace + (1-y)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
+        \Big\rbrace\\
     & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace\\
     & = qx \lbrace T\alpha + V_{A1} + \delta_{内閣}V_{A2} - TV_{A1} - T\delta_{内閣}V_{A2} - T\beta -V_{B1} -\delta_{内閣}V_{B2} + TV_{B1} + T\delta_{内閣}V_{B2} \rbrace\\
     & \quad -qy\lbrace T\alpha + V_{A1} + \delta_{内閣}V_{A2} - TV_{A1} - T\delta_{内閣}V_{A2} - T\beta -V_{B1} -\delta_{内閣}V_{B2} + TV_{B1} + T\delta_{内閣}V_{B2} \rbrace\\
@@ -97,9 +99,11 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
 この差分が$=0$になる時が、2つの行動が無差別になる状態$T^*_{平時}$なので
 \begin{gather*}
     T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2} = 0\\
-    T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }
-    = T^*_{平時}
 \end{gather*}
+よって、
+$$T = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }
+= T^*_{平時}$$
+
 
 まとめると、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$の数式上の定義は以下になる。
 \begin{definition} $T^*_{有事} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
@@ -118,12 +122,12 @@ TODO:差分を一回微分してどうなるか。
 
 
 
-\subsection{$T^*$ が内点に存在する条件}
+\subsection{$T^*$ が全て内点に存在する条件}
 
 内閣の私欲パラメーターである$T$は$[0,1]$の範囲に存在する。
 しかし、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$はそうとは限らない。
 $0<T^*<1$のように内点に存在する場合は、最適反応が変わる境界点としての役割を持つ。
-しかし$T^*<0,1<T^*$のように端点に存在する場合は、$T$の値によって最適反応は変わらない。
+しかし$T^*<0,1<T^*$のように端点に存在する場合は、$T$の値によって最適反応は変わらない。\footnote{TODO:=がついたときも考える or ここでは考えない言い訳をする。}
 よって、$T^*$が内点に存在する場合と、端点に存在する場合に分けて考える必要がある。
 以下では、まず$T^*$ が内点に存在する場合の条件を明示する。
 
@@ -155,7 +159,7 @@ $0<T^*_{有事}$より、
 
 $T^*_{有事}<1$より、
 \begin{align*}
-    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} } &> 1\\
+    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} } &< 1\\
     V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} &< \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}\\
     \delta_{内閣}(V_{B2} - V'_{A2}) &< \alpha-\beta + \delta_{内閣}(V_{B2} - V'_{A2})\\
     \beta &< \alpha
@@ -195,24 +199,164 @@ $$\beta > \alpha$$
 \end{align*}
 
 
-
+\bigskip
 \noindent
 \textbf{平時-(i)}\; $0<T^*_{平時}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}　> 0$
 
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V_{A2}) &> -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V_{A2} - V_{B2}) &< \alpha-\beta + V_{B1}-V_{A1}\\
+    \delta_{内閣} &< \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}
+\end{align*}
 
+$0<T^*_{平時}$より、
+\begin{align*}
+    0 &< \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }\\
+    0 &<  V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V_{A2})\\
+    -V_{B1} + V_{A1} &< \delta_{内閣}(V_{B2} - V_{A2})\\
+    V_{B1} - V_{A1} &> \delta_{内閣}(V_{A2} - V_{B2})\\
+    \delta_{内閣} &< \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}
+\end{align*}
+
+
+$T^*_{平時}<1$より、
+\begin{align*}
+    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } &< 1\\
+    V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} &< \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}\\
+    \delta_{内閣}(V_{B2} - V_{A2}) &< \alpha-\beta + \delta_{内閣}(V_{B2} - V_{A2})\\
+    \beta &< \alpha
+\end{align*}
+
+
+この3つの条件を合わせて、以下の最終的な条件を得る。
+\begin{align*}
+    \text{平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}
+    \end{cases}
+\end{align*}
+
+
+
+\bigskip
 \noindent
 \textbf{平時-(ii)}\; $0<T^*_{平時}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}　< 0$
 
+まず分母の条件より
+$$\delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}$$
+
+$0<T^*_{平時}$より、
+$$\delta_{内閣} > \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}$$
+
+$T^*_{平時}<1$より、
+$$\beta > \alpha$$
+
+この3つの条件を合わせて、以下の最終的な条件を得る。
+\begin{align*}
+    \text{平時-(ii)} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
+
+
+
+\bigskip
+まとめると、有事と平時、またそれらの分母の正負から以下の4つの場合分けが生じる。
+\begin{align*}
+    \text{有事-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}.
+    \end{cases}
+    \text{有事-(ii)} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}
+    \end{cases}
+    \text{平時-(ii)} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
+
+
+
+
+\noindent
+$T^*$ が全て内点に存在するとは、有事-(i)かつ平時-(i)、有事-(i)かつ平時-(ii)、有事-(ii)かつ平時-(i)、有事-(ii)かつ平時-(ii)、の内のどれかが成立している状態である。
+それぞれの場合ごとに条件の成立可否と最終的な条件を出す。
+
+有事-(i)かつ平時-(i)：
+$\frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}$なので、
+\begin{align*}
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}.
+    \end{cases}
+\end{align*}
+
+
+有事-(i)かつ平時-(ii)： $\beta < \alpha, \alpha < \beta$が矛盾するので不成立
+
+
+有事-(ii)かつ平時-(i)： $\alpha < \beta, \beta < \alpha$が矛盾するので不成立
+
+
+有事-(ii)かつ平時-(ii)：
+$\frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}$なので、
+\begin{align*}
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
+
+よって、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$ が全て内点に存在する場合、以下のどちらかが成立する必要がある。
+
+\begin{align*}
+    有事-(i)かつ平時-(i)：\Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}.
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    有事-(ii)かつ平時-(ii)：\Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
 
 
 
 
 
-
-
-\subsection{$T^*$ が端点に存在する条件}
+\subsection{$T^*$ が全て端点に存在する条件}
 
 その存在区間から導かれる条件を明らかにする。
+
+
+
+\subsection{$T^*$ が内点と端点に存在する条件}
+
+(i)有事で内点、平時で端点 $\Big\{  \big\{ \{\} \big\} \Big\} $
+
+(ii)有事で端点、平時で内点$\lbrace asd   test asd \rbrace$
 
 
 \theendnotes %章末注
