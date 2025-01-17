@@ -1,30 +1,22 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
 
-\section{均衡}
+\section{内閣の最適反応}
 
 
-\subsection{市民が愚民である場合の、国会の最適反応}
-
-仮定5より、市民が愚民である場合は、平時でも有事でも国会は即時的政策($B$)を選好する。
-よって、愚民である場合は$a_{国会}=B$が支配戦略になる。
-
-
-\subsection{内閣の最適反応}
 
 内閣の戦略のパターン数は、私的情報の$W=\lbrace 有事, 平時\rbrace, T\in[0,1]$によって決まる。
 私欲パラメーターの$T$は連続変数であるため、内閣にとって$m_{内閣}=A,m_{内閣}=B$が無差別となる境目$T^*$が存在する。
 実際の$T$が$T^*$よりも大きいか小さいかで、内閣の最適反応は変化する。
 $T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}$が存在する。
-よって内閣の戦略は、世界の状態$W$と、$T$と$T^*$の大小関係によって戦略は場合分けされる。
+よって内閣の戦略は、世界の状態$W$と、$T$と$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$の大小関係によって戦略は場合分けされる。
 具体的には、以下の4パターンでそれぞれ投資的政策($A$)を主張するか、即時的政策($B$)を主張するかを選択する。
 \begin{align*}
-    & W=有事 かつ T^*_{有事}>T  \\
-    & W=有事 かつ T^*_{有事}<T  \\
-    & W=平時 かつ T^*_{平時}>T  \\
-    & W=平時 かつ T^*_{平時}<T  
+    & (W=有事) かつ (T^*_{有事}>T) の場合 \\
+    & (W=有事) かつ (T^*_{有事}<T) の場合 \\
+    & (W=平時) かつ (T^*_{平時}>T) の場合 \\
+    & (W=平時) かつ (T^*_{平時}<T) の場合 
 \end{align*}
-
 
 
 内閣の最適戦略は国会の最適戦略に依存する。しかし、国会の最適戦略も同じように内閣の最適戦略に依存している。
@@ -36,8 +28,15 @@ $T^*$は、世界の状態$W$に依存するため、$T^*_{有事}, T^*_{平時}
     & P(a_{国会} = B| m_{内閣} = B, \delta_{市民} = \delta_H ) = 1-y
 \end{align*}
 
-まず、$T^*_{有事}, T^*_{平時}$を求めて、その存在区間から導かれる条件を明らかにする。
 
+
+
+
+
+\subsection{各行動が無差別となる境界点$T^*$の数式表現}
+
+
+まず、内閣にとっての各行動が無差別になる境目である$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$を求める。
 $T^*_{有事}$は、有事において内閣の期待効用が無差別となる状態である。有事における各行動の期待効用は
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=有事)]\\
@@ -54,6 +53,7 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
     & \quad +(1-q)\lbrace T\beta + (1-T)(V_{B1} + \delta_{内閣} V_{B2}) \rbrace
 \end{align*}
 
+\noindent
 この差分は、
 \begin{align*}
     & E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)]\\
@@ -65,6 +65,7 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
                 +V_{A1} - V_{B1} + \delta_{内閣}(V'_{A2} - V_{B2}) \rbrace
 \end{align*}
 
+\noindent
 この差分が$=0$になる時が、2つの行動が無差別になる状態$T^*_{有事}$なので
 \begin{gather*}
     E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] = 0　\\
@@ -92,6 +93,7 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
     & = q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace
 \end{align*}
 
+\noindent
 この差分が$=0$になる時が、2つの行動が無差別になる状態$T^*_{平時}$なので
 \begin{gather*}
     T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2} = 0\\
@@ -99,23 +101,119 @@ $T^*_{有事}$は、有事において内閣の期待効用が無差別となる
     = T^*_{平時}
 \end{gather*}
 
-まとめると、
+まとめると、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$の数式上の定義は以下になる。
 \begin{definition} $T^*_{有事} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
 \begin{definition} $T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
 
 
 
-\subsection{国会の最適反応}
+
+
+\subsection{$T^*$ の性質}
+
+TODO:差分を一回微分してどうなるか。
 
 
 
+
+
+
+\subsection{$T^*$ が内点に存在する条件}
+
+内閣の私欲パラメーターである$T$は$[0,1]$の範囲に存在する。
+しかし、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$はそうとは限らない。
+$0<T^*<1$のように内点に存在する場合は、最適反応が変わる境界点としての役割を持つ。
+しかし$T^*<0,1<T^*$のように端点に存在する場合は、$T$の値によって最適反応は変わらない。
+よって、$T^*$が内点に存在する場合と、端点に存在する場合に分けて考える必要がある。
+以下では、まず$T^*$ が内点に存在する場合の条件を明示する。
+
+
+$W=有事$の場合、$T^*_{有事} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }$
+となる。
+内点の条件は$0<T^*<1$だが、$T^*_{有事}, T^*_{平時}$の分母の正負で場合分けが必要。
+
+\bigskip
+\noindent
+\textbf{有事-(i)}\; $0<T^*_{有事}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} > 0$
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V'_{A2}) &> -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V'_{A2} - V_{B2}) &< \alpha-\beta + V_{B1}-V_{A1}\\
+    \delta_{内閣} &< \frac{\alpha-\beta + V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}
+\end{align*}
+
+$0<T^*_{有事}$より、
+\begin{align*}
+    0 &< \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }\\
+    0 &<  V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V'_{A2})\\
+    -V_{B1} + V_{A1} &< \delta_{内閣}(V_{B2} - V'_{A2})\\
+    V_{B1} - V_{A1} &> \delta_{内閣}(V'_{A2} - V_{B2})\\
+    \delta_{内閣} &< \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}}
+\end{align*}
+
+
+$T^*_{有事}<1$より、
+\begin{align*}
+    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} } &> 1\\
+    V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} &< \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2}\\
+    \delta_{内閣}(V_{B2} - V'_{A2}) &< \alpha-\beta + \delta_{内閣}(V_{B2} - V'_{A2})\\
+    \beta &< \alpha
+\end{align*}
+
+この3つの条件を合わせて、以下の最終的な条件を得る。
+\begin{align*}
+    \text{有事-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        \delta_{内閣} < \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}.
+    \end{cases}
+\end{align*}
+
+
+
+\bigskip
+\noindent
+\textbf{有事-(ii)}\; $0<T^*_{有事}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V'_{A2} < 0$
+
+まず分母の条件より
+$$\delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V'_{A2} - V_{B2}}$$
+
+$0<T^*_{有事}$より、
+$$\delta_{内閣} > \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}}$$
+
+$T^*_{有事}<1$より、
+$$\beta > \alpha$$
+
+この3つの条件を合わせて、以下の最終的な条件を得る。
+\begin{align*}
+    \text{有事-(ii)} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta, \\
+        \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} < \delta_{内閣}
+    \end{cases}
+\end{align*}
+
+
+
+\noindent
+\textbf{平時-(i)}\; $0<T^*_{平時}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}　> 0$
+
+
+\noindent
+\textbf{平時-(ii)}\; $0<T^*_{平時}<1,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}　< 0$
+
+
+
+
+
+
+
+
+\subsection{$T^*$ が端点に存在する条件}
+
+その存在区間から導かれる条件を明らかにする。
 
 
 \theendnotes %章末注
-
-注がある章の末尾にはコマンド \verb#\theendnotes# を挿入すべし\footnote{章末注は節として扱います。}。
-
-
-\theendnotes %章末注
-
 \end{document}
