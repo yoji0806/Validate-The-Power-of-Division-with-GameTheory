@@ -127,7 +127,7 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
 \end{figure}
 
 
-前述の通り、$\delta_{市民}\in[0,1]$は主権者である市民が賢民($\delta_H$)か愚民($\delta_H$)かを表す。
+前述の通り、$\delta_{市民}\in[0,1]$は主権者である市民が賢民($\delta_H$)か愚民($\delta_L$)かを表す。
 
 賢民($\delta_H$)である場合は、有事では予防的政策(A)、平時では即時的政策(B)を望むものとする。これは例えば、社会保障が増大している時に増税を受け入れるような状態である。
 この仮定は数式上は以下のように表される。
@@ -152,7 +152,7 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
 \end{align*}
 
 
-この2つの条件をまとめると、以下の条件が導かれる。
+この2つの条件をまとめると、賢民($\delta_H$)に関する以下の条件が導かれる。
 \condition{
 \begin{align*}
   \begin{cases}
@@ -181,20 +181,17 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
 }
 
 \bigskip
-愚民($\delta_L$)である場合は、平時であろうが有事であろうが即時的政策(B)を望むものとする。これは例えば、給付金によるばら撒き政策を常に望む状態である。
+愚民($\delta_L$)である場合は、有事であろうが平時であろうが即時的政策(B)を望むものとする。これは例えば、給付金によるばら撒き政策を常に望む状態である。
 この仮定は数式上では以下のように表される。
-\assumption{$V_{A1} + \delta_L V'_{A2} < V_{B1} + \delta_L V_{B2}$ 
+\assumption{$V'_{A1} + \delta_L V'_{A2} < V'_{B1} + \delta_L V'_{B2}$ 
   \quad{かつ}\quad $V_{A1} + \delta_L V_{A2} < V_{B1} + \delta_L V_{B2}$}
  
 この仮定を整理すると、
 \begin{align*}
-  V_{A1} + \delta_L V'_{A2} < V_{B1} + \delta_L V_{B2} \\
-  \delta_L V'_{A2} - \delta_L V_{B2} < V_{B1}  - V_{A1} \\
-  \delta_L (V'_{A2} - V_{B2}) < V_{B1}  - V_{A1}\\
-  \begin{cases}
-    \delta_L &< \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} \quad\text{if}\quad V_{B2} < V'_{A2} \\
-    \delta_L &> \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} \quad\text{if}\quad V'_{A2} < V_{B2}
-  \end{cases}
+  V'_{A1} + \delta_L V'_{A2} &< V'_{B1} + \delta_L V'_{B2} \\
+  \delta_L V'_{A2} - \delta_L V'_{B2} &< V'_{B1}  - V'_{A1} \\
+  \delta_L (V'_{A2} - V'_{B2}) &< V'_{B1}  - V'_{A1}\\
+  \delta_L &< \frac{V'_{B1}  - V'_{A1}}{V'_{A2} - V'_{B2}}
 \end{align*}
 
 
@@ -207,6 +204,35 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
     \delta_L &> \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad\text{if}\quad V_{A2} < V_{B2}
   \end{cases}
 \end{align*}
+
+
+この2つの条件をまとめると、愚民($\delta_L$)に関する以下の条件が導かれる。
+\condition{
+\begin{align*}
+  \begin{cases}
+    \delta_L < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} 
+      \quad&\text{if}\quad 
+        V_{B2} < V_{A2} 
+        \quad{かつ}\quad 
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\[0.5em]
+    \delta_L < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} 
+      \quad&\text{if}\quad 
+        V_{B2} < V_{A2} 
+        \quad{かつ}\quad 
+        \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\[0.5em]
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_L \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} 
+      \quad&\text{if}\quad 
+        V_{A2} < V_{B2} 
+        \quad{かつ}\quad 
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\[0.5em]
+    \delta_L < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}, \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_L
+      \quad&\text{if}\quad 
+        V_{A2} < V_{B2} 
+        \quad{かつ}\quad 
+        \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}}
+  \end{cases}
+\end{align*}
+}
 
 \bigskip
 上の図2はこれらの仮定を含めたものである\footnote{TODO:$\delta_{市民} = \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}}$の時は、考える意味がない or 愚民か賢民の方にくっつける。}。
