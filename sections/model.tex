@@ -21,14 +21,14 @@
 国会の効用関数を以下のように定義する。
 $$u_\text{国会} = v_t(\;W\;,\; a_\text{国会}\;) × \delta^{t-1}_\text{市民}$$
 $v_t(\;W\;,\; a_\text{国会}\;)$は、市民の厚生関数である。この厚生関数は、世界の状態である$W=\lbrace 有事, 平時\rbrace$と、国会が承認する政策$a_{国会}=\lbrace A, B\rbrace$によって決まる。
-有事では投資的政策$A$が長期ではより効果的であり、平時では即時的政策$B$がより効果的であるとする。
+有事では予防的政策$A$が長期でより効果的であり、平時では即時的政策$B$が長期でより効果的であるとする。
 時間割引率$\delta_{市民}=\lbrace \delta_L, \delta_H \rbrace (0\le \delta_L<\delta_H \le 1)$は、主権である市民が愚民($\delta_L$)であるか、賢民($\delta_H$)であるかを表している。
 国会は、市民\footnote{モデル外}から直接声を聞くため、この市民の時間割引率$\delta_{市民}$を観測できるが、内閣は観測できない。
 
 内閣の効用関数を以下のように定義する。
 $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\text{国会}) \rbrace  + (1-T)v_t(\;W\;,\; a_\text{国会}\;) \rbrace × \delta^{1-t}_{内閣}$$
 内閣も市民の一人であるので、厚生関数$v_t(\;W\;,\; u_\text{国会}\;)$を同じように持つ。
-加えて、内閣には私欲とも呼ばれる独自の正義感があり、各政策の実行自体からも効用を得る。それぞれ、投資的政策Aから得られる効用を$\alpha$, 即時的政策Bから得られる効用を$\beta$とする。
+加えて、内閣には私欲とも呼ばれる独自の正義感があり、各政策の実行自体からも効用を得る。それぞれ、予防的政策Aから得られる効用を$\alpha$, 即時的政策Bから得られる効用を$\beta$とする。
 数式上では$a_{国会}=\lbrace A, B\rbrace = \lbrace 1,0\rbrace$とする。
 この私欲と公共心の割合は$T:(1-T)$で表される。ただし、$T\in[0,1]$ 。
 内閣は自身の私欲と公共心の割合$T:(1-T)$に加え、外交や調査機関の情報\footnote{これらはモデル外の話。}から世界の状態$W=\lbrace 有事, 平時\rbrace$を観測できるが、国会からは観測できないものとする。
@@ -82,19 +82,38 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
 \end{figure}
 
 有事における政策$A$によるt期の効用を$v'_{At}$とし、平時における政策$A$によるt期の効用を$v_{At}$とする。
+前述の通り、有事では予防的政策$A$が長期的にはより効果的であり、平時では即時的政策$B$が長期的により効果的である。よって以下の仮定を得る。
+\begin{assumption}  $v_{A1} + v_{A2} < v_{B1} + v_{B2}$ \end{assumption}
+\begin{assumption}  $v'_{B1} + v'_{B2} < v'_{A1} + v'_{A2}$ \end{assumption}
 
-世界の状態$W$が有事であっても平時であっても、即時的政策$B$の効用は変わらないものとする。
-また前述の通り、有事では投資的政策$A$が長期的にはより効果的であり、平時では即時的政策$B$が長期的により効果的である。よって以下の仮定を得る。
-\begin{assumption}  $v_{A1} + v_{A2}<v_{B1} + v_{B2} <  v_{A1} + v'_{A2}$ \end{assumption}
 
+有事においては、1期目は準備期間で2期目に深刻な事態が訪れるとする。
+なので、平時有事に関わらず、1期目においては即時的政策$B$の効用がより大きい。よって以下の仮定を得る。
+\begin{assumption}  $v_{A1} < v_{B1}$  \end{assumption}
+\begin{assumption}  $v'_{A1} < v'_{B1}$ \end{assumption}
 
-また、投資的政策$A$は実行に時間がかかるため、1期目における効用は平時でも有事でも変化がないが、2期目においてその効果が出るものとする。
-さらに、平時または有事における各期の効用の大小関係、及び、平時と有事間での$A$政策の2期目の効用の差分と、$B$政策の1期目と2期目の差分の大小関係を以下のように仮定する。
-\begin{assumption}  $v_{A1} < v_{B2} < v_{A2} < v_{B1} < v'_{A2}$  \end{assumption}
-\begin{assumption}  $v_{A2} - v_{B1} < v'_{A2} - v_{B2}$\footnote{TODO:この過程は現実を反映したものではなく、計算上でxxxのため。}  \end{assumption}
+仮定2と仮定4より、以下の条件が導かれる。これは有事においては、2期目の効用は予防的政策（$A$）の方が大きくなることを表す。
+\begin{condition}  $v'_{B2} < v'_{A2}$ \end{condition}
+
 
 上の図1はこれらの仮定を含めたものである。
+このモデルの仮定を表す状況として例えば以下が考えられる。
+即時的政策($B$)は予防的政策($A$)を行わない場合、と広く解釈できる。
 
+\begin{table}[htbp]
+  \caption{モデルの解釈の例}
+  \label{table:data_type}
+  \centering
+  \begin{tabular}{cc}
+    \toprule
+    $W=有事$ & 予防的政策($A$) \\
+    \midrule
+    大地震 & 耐震工事・防波堤の建設 \\
+    戦争 & 軍事費増大 \\
+    少子高齢化の果て & 年金制度の改革 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 
 
@@ -110,18 +129,86 @@ $$ u_\text{内閣} =\;\; \lbrace T\lbrace \alpha a_\text{国会} + \beta (1-a_\t
 
 前述の通り、$\delta_{市民}\in[0,1]$は主権者である市民が賢民($\delta_H$)か愚民($\delta_H$)かを表す。
 
-賢民である場合は、有事では投資的政策、平時では即時的政策を望むものとする。これは例えば、社会保障が増大している時に増税を受け入れるような状態である。
-数式上は$V_{B1} + \delta_H V_{B2} < V_{A1} + \delta_H V'_{A2}$ かつ $V_{A1} + \delta_H V_{A2} < V_{B1} + \delta_H V_{B2}$で表され、
-整理すると$\frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}} < \delta_H < \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}}$となる。
-これと$0 < \delta_H \le 1$を合わせて以下の仮定を得る。
-\begin{assumption}  $\frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}} < \delta_H \le 1$  \end{assumption}
+賢民($\delta_H$)である場合は、有事では予防的政策(A)、平時では即時的政策(B)を望むものとする。これは例えば、社会保障が増大している時に増税を受け入れるような状態である。
+この仮定は数式上は以下のように表される。
+\assumption{$V'_{B1} + \delta_H V'_{B2} < V'_{A1} + \delta_H V'_{A2}$ \quad{かつ}\quad $V_{A1} + \delta_H V_{A2} < V_{B1} + \delta_H V_{B2}$}
+
+この仮定を整理すると、
+\begin{align*}
+  V'_{B1} + \delta_H V'_{B2} &< V'_{A1} + \delta_H V'_{A2}\\
+  V'_{B1}-V'_{A1}  &<  \delta_H (V'_{A2} - V'_{B2}) \\
+  \delta_H (V'_{A2} - V'_{B2}) &> V'_{B1}-V'_{A1} \\
+  \delta_H &> \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}
+\end{align*}
+
+\noindent
+\begin{align*}
+  V_{A1} + \delta_H V_{A2} < V_{B1} + \delta_H V_{B2}\\
+  \delta_H (V_{A2} - V_{B2}) < V_{B1}-V_{A1} \\
+  \begin{cases}
+    \delta_H &< \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad\text{if}\quad V_{B2} < V_{A2}\\
+    \delta_H &> \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad\text{if}\quad V_{A2} < V_{B2}
+  \end{cases}
+\end{align*}
 
 
-愚民である場合は、平時であろうが有事であろうが即時的政策を望むものとする。これは例えば、給付金によるばら撒き政策を常に望む状態である。
-数式上は$V_{A1} + \delta_L V'_{A2} < V_{B1} + \delta_L V_{B2}$かつ$V_{A1} + \delta_L V_{A2} < V_{B1} + \delta_L V_{B2}$で表され、
-整理すると$ \delta_L < \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}} $となる。これと$0\le \delta_L < \delta_H$を合わせて以下の仮定を得る。
-\begin{assumption}  $0 \le  \delta_L < \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}} $  \end{assumption}
+この2つの条件をまとめると、以下の条件が導かれる。
+\condition{
+\begin{align*}
+  \begin{cases}
+    \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_H < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} 
+      \quad&\text{if}\quad 
+        V_{B2} < V_{A2} 
+        \quad{かつ}\quad 
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\[0.5em]
+    \delta_H < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}, \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_H 
+      \quad&\text{if}\quad 
+        V_{B2} < V_{A2} 
+        \quad{かつ}\quad 
+        \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\[0.5em]
+    \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_H
+      \quad&\text{if}\quad 
+        V_{A2} < V_{B2} 
+        \quad{かつ}\quad 
+        \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\[0.5em]
+    \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_H
+      \quad&\text{if}\quad 
+        V_{A2} < V_{B2} 
+        \quad{かつ}\quad 
+        \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}}
+  \end{cases}
+\end{align*}
+}
 
+\bigskip
+愚民($\delta_L$)である場合は、平時であろうが有事であろうが即時的政策(B)を望むものとする。これは例えば、給付金によるばら撒き政策を常に望む状態である。
+この仮定は数式上では以下のように表される。
+\assumption{$V_{A1} + \delta_L V'_{A2} < V_{B1} + \delta_L V_{B2}$ 
+  \quad{かつ}\quad $V_{A1} + \delta_L V_{A2} < V_{B1} + \delta_L V_{B2}$}
+ 
+この仮定を整理すると、
+\begin{align*}
+  V_{A1} + \delta_L V'_{A2} < V_{B1} + \delta_L V_{B2} \\
+  \delta_L V'_{A2} - \delta_L V_{B2} < V_{B1}  - V_{A1} \\
+  \delta_L (V'_{A2} - V_{B2}) < V_{B1}  - V_{A1}\\
+  \begin{cases}
+    \delta_L &< \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} \quad\text{if}\quad V_{B2} < V'_{A2} \\
+    \delta_L &> \frac{V_{B1}-V_{A1}}{V'_{A2} - V_{B2}} \quad\text{if}\quad V'_{A2} < V_{B2}
+  \end{cases}
+\end{align*}
+
+
+\begin{align*}
+  V_{A1} + \delta_L V_{A2} < V_{B1} + \delta_L V_{B2} \\
+  \delta_L V_{A2} - \delta_L V_{B2} < V_{B1} - V_{A1} \\
+  \delta_L (V_{A2} - V_{B2}) < V_{B1} - V_{A1} \\
+  \begin{cases}
+    \delta_L &< \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad\text{if}\quad V_{B2} < V_{A2}\\
+    \delta_L &> \frac{V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad\text{if}\quad V_{A2} < V_{B2}
+  \end{cases}
+\end{align*}
+
+\bigskip
 上の図2はこれらの仮定を含めたものである\footnote{TODO:$\delta_{市民} = \frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}}$の時は、考える意味がない or 愚民か賢民の方にくっつける。}。
 つまり、$\frac{V_{B1} - V_{A1}}{V'_{A2} - V_{B2}}$を境として市民が賢民か愚民かが決まる。 
 
