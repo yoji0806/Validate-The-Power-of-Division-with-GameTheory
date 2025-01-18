@@ -3,14 +3,66 @@
 
 \section{均衡}
 
+内閣の純粋戦略は以下の4つになる。\footnote{TODO:どうやって16個から減らしたかをかく。結局端点を見るので減らないが。}
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow A\\
+        \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+それぞれの戦略でベイジアンナッシュ均衡になる条件を求める。
+
+\bigskip
+\noindent
+\underline{戦略1. (A,B,A,B)}
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,1,0)$となる。
 
 
-TODO: 以下の続きを計算する。
+
+
+
+
+
+
+
+\bigskip
+TODO: 以下の続きを、国会の章にかく。
 \begin{align*}
     P(T>T^*_{有事}) &= \int_1^{T^*_{有事}} f(T)dT\\
     &= \int_1^{T^*_{有事}} f(T)dT
 \end{align*}
-
 
 
 \end{document}
