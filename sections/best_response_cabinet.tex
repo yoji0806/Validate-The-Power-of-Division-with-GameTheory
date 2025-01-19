@@ -309,7 +309,7 @@ $$\beta > \alpha$$
 つまり、平時-(ii) を満たす $\delta_{内閣}$は存在しない。
 
 \bigskip
-まとめると、有事と平時、またそれらの分母の正負から以下の3つの場合分けが生じる。
+まとめると、有事と平時、$T^*$の分母の正負から以下の3つの場合分けが生じる。
 \begin{align*}
     \text{有事-(i)} \Leftrightarrow 
     \begin{cases}
@@ -357,7 +357,9 @@ $\beta < \alpha, \alpha < \beta$が矛盾するので不成立
 
 
 \bigskip
-よって、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$ が全て内点に存在する場合、有事-(i)かつ平時-(i)の条件が必要になる。
+よって、$T^* = \lbrace T^*_{有事}, T^*_{平時} \rbrace$ が全て内点に存在するには、有事-(i)かつ平時-(i)の条件が必要になる。
+
+
 
 
 
@@ -365,7 +367,406 @@ $\beta < \alpha, \alpha < \beta$が矛盾するので不成立
 
 \subsection{$T^*$ が全て端点に存在する条件}
 
-その存在区間から導かれる条件を明らかにする。
+（TODO: 一旦、等号をつけてやってみる、めんどそうならやめる。）
+
+$T^*$ が全て端点に存在するとは、以下の条件が成立している場合である。\\
+$$(T^*_{有事} \le 0 \quad\text{or}\quad 1 \le T^*_{有事}) \quad\quad\text{かつ}\quad\quad (T^*_{平時} \le 0 \quad\text{or}\quad 1 \le T^*_{平時}) $$
+
+
+まずは、それぞれの条件を分母の正負に注意して、明らかにする。
+
+\bigskip
+\textbf{有事-(i)'}\; $T^*_{有事} \le 0,\;\; \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} > 0$ の場合
+
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V'_{B2} - V'_{A2}) &> -\alpha+\beta - V'_{B1}+V'_{A1} \\
+    \delta_{内閣}(V'_{A2} - V'_{B2}) &< \alpha-\beta + V'_{B1}-V'_{A1}\\
+    \delta_{内閣} &< \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} 
+\end{align*}
+
+$T^*_{有事} \le 0$より、
+\begin{align*}
+    T^*_{有事} &\le 0 \\
+    \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } &\le 0 \\
+    V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} &\le 0 \\
+    \delta_{内閣}(V'_{B2} - V'_{A2}) &\le - V'_{B1} + V'_{A1}\\
+    \delta_{内閣}(V'_{A2} - V'_{B2}) &\ge V'_{B1} - V'_{A1}\\
+    \delta_{内閣} &\ge \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }
+\end{align*}
+
+これらと、$0 \le \delta_{内閣} \le 1$を合わせて
+\begin{align*}
+\begin{cases}
+    \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} \quad &(\beta < \alpha, \quad \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < 1) \\[1em]
+    \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} } \le \delta_{内閣} \le 1 \quad &(\beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}) \\[1em]
+    解なし \quad &(\alpha < \beta)\\[1em]
+\end{cases}
+\end{align*}
+
+
+
+
+\bigskip
+\textbf{有事-(ii)'}\; $T^*_{有事} \le 0,\;\; \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} < 0$ の場合
+
+
+分母の条件より、
+$$\delta_{内閣} > \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} $$
+
+$T^*_{有事} \le 0$より、
+\begin{align*}
+    T^*_{有事} &\le 0 \\
+    \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } &\le 0 \\
+    V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} &\ge 0 \\
+    \delta_{内閣}(V'_{B2} - V'_{A2}) &\ge - V'_{B1} + V'_{A1}\\
+    \delta_{内閣}(V'_{A2} - V'_{B2}) &\le V'_{B1} - V'_{A1}\\
+    \delta_{内閣} &\le \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }
+\end{align*}
+
+これらと、$0 \le \delta_{内閣} \le 1$を合わせて
+\begin{align*}
+\begin{cases}
+    解なし   \quad &(\beta < \alpha) \\[1em]
+    \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_{内閣} \le \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }  \quad &(\alpha < \beta, \quad 0 \le \alpha-\beta + V'_{B1}-V'_{A1}) \\[1em]
+    0 \le \delta_{内閣} \le \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }  \quad &(\alpha < \beta, \quad \alpha-\beta + V'_{B1}-V'_{A1} < 0)
+\end{cases}
+\end{align*}
+
+
+
+
+\bigskip
+\textbf{有事-(iii)'}\; $1 \le T^*_{有事} ,\;\; \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} > 0$ の場合
+
+分母の条件より、
+$$\delta_{内閣} < \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} $$
+
+$1 \le T^*_{有事}$より、
+\begin{align*}
+    1 &\le T^*_{有事}  \\
+    1 &\le \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }\\[1em]
+    \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}  &\le V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} \\[1em]
+    \alpha - \beta &\le 0\\
+    \alpha &\le \beta
+\end{align*}
+
+
+これらと、$0 \le \delta_{内閣} \le 1, \quad \alpha ≠ \beta$を合わせて
+\begin{align*}
+\begin{cases}
+    \alpha < \beta \\[1em]
+    0 \le \delta_{内閣} < \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}  \quad &(\frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < 1) \\[1em]
+    0 \le \delta_{内閣} \le 1  \quad &(1 \le \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}) \\[1em]
+\end{cases}
+\end{align*}
+
+
+
+\bigskip
+\textbf{有事-(iv)'}\; $1 \le T^*_{有事} ,\;\; \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} < 0$ の場合
+
+
+分母の条件より、
+$$\delta_{内閣} > \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} $$
+
+$1 \le T^*_{有事}$より、
+\begin{align*}
+    1 &\le T^*_{有事}  \\
+    1 &\le \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }\\[1em]
+    \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}  &\ge V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} \\[1em]
+    \alpha - \beta &\ge 0\\
+    \alpha &\ge \beta\\
+    \beta &\le \alpha
+\end{align*}
+
+
+これらと、$0 \le \delta_{内閣} \le 1, \quad \alpha ≠ \beta$を合わせて
+\begin{align*}
+\begin{cases}
+    \beta < \alpha \\[1em]
+    \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_{内閣} \le 1  \quad &(\quad \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} \le 1 ) \\[1em]
+    解なし   \quad &(\quad 1 < \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} )
+\end{cases}
+\end{align*}
+
+
+
+
+\newpage
+\textbf{平時-(i)'}\; $T^*_{平時} \le 0,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} > 0$ の場合
+
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V_{A2}) > -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V_{A2} - V_{B2}) < \alpha-\beta + V_{B1}-V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2})\\[1em]
+        \delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+$T^*_{平時} \le 0$より、
+\begin{align*}
+    T^*_{平時} &\le 0 \\
+    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } &\le 0 \\
+    V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} &\le 0 \\
+    \delta_{内閣}(V_{B2} - V_{A2}) &\le - V_{B1} + V_{A1}\\
+    \delta_{内閣}(V_{A2} - V_{B2}) &\ge V_{B1} - V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} \ge \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2}) \\[1em]
+        \delta_{内閣} \le \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+これらと、$0 \le \delta_{内閣} \le 1$を合わせて
+\begin{align*}
+\begin{cases}
+    \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2},\quad \beta < \alpha, \quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+    \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} \le 1 \quad &(V_{B2} < V_{A2},\quad \beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    解なし \quad &(V_{B2} < V_{A2},\quad, \alpha < \beta)\\[1em]
+    解なし \quad &(V_{A2} < V_{B2},\quad \beta < \alpha) \\[1em]
+    \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣} \le   \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{A2} < V_{B2},\quad \alpha < \beta, \quad  0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    0 \le \delta_{内閣} \le  \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{A2} < V_{B2},\quad, \alpha < \beta,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0)\\[1em]
+\end{cases}
+\end{align*}
+
+
+
+\newpage
+\textbf{平時-(ii)'}\; $T^*_{平時} \le 0,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} < 0$ の場合
+
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V_{A2}) < -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V_{A2} - V_{B2}) > \alpha-\beta + V_{B1}-V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2})\\[1em]
+        \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+$T^*_{平時} \le 0$より、
+\begin{align*}
+    T^*_{平時} &\le 0 \\
+    \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } &\le 0 \\
+    V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} &\ge 0 \\
+    \delta_{内閣}(V_{B2} - V_{A2}) &\ge - V_{B1} + V_{A1}\\
+    \delta_{内閣}(V_{A2} - V_{B2}) &\le V_{B1} - V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} \le \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2}) \\[1em]
+        \delta_{内閣} \ge \frac{V_{B1} - V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+これらと、$0 \le \delta_{内閣} \le 1$を合わせて
+\begin{align*}
+\begin{cases}
+    解なし \quad &(V_{B2} < V_{A2},\quad \beta < \alpha) \\[1em]
+    \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣} \le   \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{B2} < V_{A2},\quad \alpha < \beta, \quad  0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    0 \le \delta_{内閣} \le  \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{B2} < V_{A2},\quad, \alpha < \beta,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0)\\[1em]
+    \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2},\quad \beta < \alpha, \quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+    \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} \le 1 \quad &(V_{A2} < V_{B2},\quad \beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    解なし \quad &(V_{A2} < V_{B2},\quad, \alpha < \beta)\\[1em]
+\end{cases}
+\end{align*}
+
+
+
+\newpage
+\textbf{平時-(iii)'}\; $1 \le T^*_{平時} ,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} > 0$ の場合
+
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V_{A2}) > -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V_{A2} - V_{B2}) < \alpha-\beta + V_{B1}-V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2})\\[1em]
+        \delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+$1 \le T^*_{平時}$ より、
+\begin{align*}
+    1 &\le T^*_{平時}  \\
+    1 &\le \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }\\[1em]
+    \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}  &\le V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} \\[1em]
+    \alpha - \beta &\le 0\\
+    \alpha &\le \beta
+\end{align*}
+
+
+
+$\alpha < \beta$においては、$V_{A2}, V_{B2}$の大小関係に関わらず、$\frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}$が正にも負にもなるりうることに注意する。
+これらと、$0 \le \delta_{内閣} \le 1, \quad \alpha ≠ \beta$を合わせて、
+\begin{align*}
+\begin{cases}
+    \alpha < \beta \\[1em]
+    解なし \quad &( V_{B2} < V_{A2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 0 )\\[1em]
+    0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}  \quad &( V_{B2} < V_{A2} ,\quad 0 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+    0 \le \delta_{内閣} \le 1  \quad &( V_{B2} < V_{A2} ,\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    0 \le \delta_{内閣} \le 1 \quad &( V_{A2} < V_{B2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0 )\\[1em]
+    \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le \delta_{内閣} \le 1  \quad &( V_{A2} < V_{B2} ,\quad 0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 1) \\[1em]
+    解なし  \quad &( V_{A2} < V_{B2} ,\quad 1 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+\end{cases}
+\end{align*}
+
+
+
+
+
+\newpage
+\textbf{平時-(iv)'}\; $1 \le T^*_{平時} ,\;\; \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} < 0$ の場合
+
+
+まず分母の条件を整理すると、
+\begin{align*}
+    \delta_{内閣}(V_{B2} - V_{A2}) < -\alpha+\beta - V_{B1}+V_{A1} \\
+    \delta_{内閣}(V_{A2} - V_{B2}) > \alpha-\beta + V_{B1}-V_{A1}\\
+    \begin{cases}
+        \delta_{内閣} > \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2})\\[1em]
+        \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+$1 \le T^*_{平時}$ より、
+\begin{align*}
+    1 &\le T^*_{平時}  \\
+    1 &\le \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }\\[1em]
+    \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2}  &\ge V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} \\[1em]
+    \alpha - \beta &\ge 0\\
+    \alpha &\ge \beta \\
+    \beta &\le \alpha
+\end{align*}
+
+
+$\beta < \alpha$においては、$\frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}$の正負は以下になることに注意する。
+\begin{align*}
+    \begin{cases}
+        0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad&(V_{B2} < V_{A2})\\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 0 \quad&(V_{A2} < V_{B2})
+    \end{cases}
+\end{align*}
+
+
+これらと、$0 \le \delta_{内閣} \le 1, \quad \alpha ≠ \beta$を合わせて、
+\begin{align*}
+\begin{cases}
+    \beta < \alpha \\[1em]
+    \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le \delta_{内閣} \le 1  \quad &( V_{B2} < V_{A2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 1) \\[1em]
+    解なし  \quad &( V_{B2} < V_{A2} ,\quad 1 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    解なし \quad &( V_{A2} < V_{B2} )\\[1em]
+\end{cases}
+\end{align*}
+
+
+
+
+\newpage
+まとめると、有事と平時、$T^*$の分母の正負から以下の8つの場合分けが生じる。
+\begin{align*}
+    \text{有事-(i)'} \Leftrightarrow 
+    \begin{cases}
+        \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} \quad &(\beta < \alpha, \quad \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < 1) \\[1em]
+        \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} } \le \delta_{内閣} \le 1 \quad &(\beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}) \\[1em]
+        解なし \quad &(\alpha < \beta)\\[1em]
+    \end{cases}
+\end{align*}
+\begin{align*}
+    \text{有事-(ii)'} \Leftrightarrow 
+    \begin{cases}
+        解なし   \quad &(\beta < \alpha) \\[1em]
+        \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_{内閣} \le \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }  \quad &(\alpha < \beta, \quad 0 \le \alpha-\beta + V'_{B1}-V'_{A1}) \\[1em]
+        0 \le \delta_{内閣} \le \frac{ V'_{B1} - V'_{A1} }{ V'_{A2} - V'_{B2} }  \quad &(\alpha < \beta, \quad \alpha-\beta + V'_{B1}-V'_{A1} < 0)
+    \end{cases}
+\end{align*}
+\begin{align*}
+    \text{有事-(iii)'} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta \\[1em]
+        解なし \quad &( V_{B2} < V_{A2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 0 )\\[1em]
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}  \quad &( V_{B2} < V_{A2} ,\quad 0 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+        0 \le \delta_{内閣} \le 1  \quad &( V_{B2} < V_{A2} ,\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        0 \le \delta_{内閣} \le 1 \quad &( V_{A2} < V_{B2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0 )\\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le \delta_{内閣} \le 1  \quad &( V_{A2} < V_{B2} ,\quad 0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 1) \\[1em]
+        解なし  \quad &( V_{A2} < V_{B2} ,\quad 1 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    \end{cases}
+\end{align*}
+\begin{align*}
+    \text{有事-(iv)'} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha \\[1em]
+        \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} < \delta_{内閣} \le 1  \quad &(\quad \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} \le 1 ) \\[1em]
+        解なし   \quad &(\quad 1 < \frac{\alpha-\beta + V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}} )
+    \end{cases}
+\end{align*}
+
+
+
+\begin{align*}
+    \text{平時-(i)'} \Leftrightarrow 
+    \begin{cases}
+        \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{B2} < V_{A2},\quad \beta < \alpha, \quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+        \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} \le 1 \quad &(V_{B2} < V_{A2},\quad \beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        解なし \quad &(V_{B2} < V_{A2},\quad, \alpha < \beta)\\[1em]
+        解なし \quad &(V_{A2} < V_{B2},\quad \beta < \alpha) \\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣} \le   \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{A2} < V_{B2},\quad \alpha < \beta, \quad  0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        0 \le \delta_{内閣} \le  \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{A2} < V_{B2},\quad, \alpha < \beta,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0)\\[1em]
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{平時-(ii)'} \Leftrightarrow 
+    \begin{cases}
+        解なし \quad &(V_{B2} < V_{A2},\quad \beta < \alpha) \\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < \delta_{内閣} \le   \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{B2} < V_{A2},\quad \alpha < \beta, \quad  0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        0 \le \delta_{内閣} \le  \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \quad &(V_{B2} < V_{A2},\quad, \alpha < \beta,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0)\\[1em]
+        \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} <  \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad &(V_{A2} < V_{B2},\quad \beta < \alpha, \quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+        \frac{ V_{B1} - V_{A1} }{ V_{A2} - V_{B2} } \le \delta_{内閣} \le 1 \quad &(V_{A2} < V_{B2},\quad \beta < \alpha, \quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        解なし \quad &(V_{A2} < V_{B2},\quad, \alpha < \beta)\\[1em]
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{平時-(iii)'} \Leftrightarrow 
+    \begin{cases}
+        \alpha < \beta \\[1em]
+        解なし \quad &( V_{B2} < V_{A2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 0 )\\[1em]
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}  \quad &( V_{B2} < V_{A2} ,\quad 0 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} < 1) \\[1em]
+        0 \le \delta_{内閣} \le 1  \quad &( V_{B2} < V_{A2} ,\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        0 \le \delta_{内閣} \le 1 \quad &( V_{A2} < V_{B2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 0 )\\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le \delta_{内閣} \le 1  \quad &( V_{A2} < V_{B2} ,\quad 0 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 1) \\[1em]
+        解なし  \quad &( V_{A2} < V_{B2} ,\quad 1 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+    \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{平時-(iv)'} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha \\[1em]
+        \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le \delta_{内閣} \le 1  \quad &( V_{B2} < V_{A2} ,\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \le 1) \\[1em]
+        解なし  \quad &( V_{B2} < V_{A2} ,\quad 1 < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}) \\[1em]
+        解なし \quad &( V_{A2} < V_{B2} )\\[1em]
+    \end{cases}
+\end{align*}
+
+
+このうち、有事(i)~(iv)の一つと平時(i)~(iv)の一つが同時に成立すれば良い。4×4=16通りの組み合わせがあるが、いくつかは減らせる。
+
+まず、$\alpha, \beta$の大小関係に注目すると、以下の組み合わせは成立しないことがわかる。
+$$(\text{有事-(i)}, \text{平時-(iii)}),\quad (\text{有事-(ii)}, \text{平時-(iv)}),\quad (\text{有事-(iii)}, \text{平時-(iv)}),\quad (\text{有事-(iv)}, \text{平時-(iii)})$$
+
+
+
 
 
 
