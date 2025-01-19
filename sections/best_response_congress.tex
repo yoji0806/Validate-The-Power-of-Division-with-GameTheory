@@ -22,10 +22,10 @@
     & P(m_{内閣} = B| W = {有事}, T > T^*_{有事} ) \equiv 1-e \\
     & P(m_{内閣} = A| W = {有事}, T < T^*_{有事}) \equiv f \\
     & P(m_{内閣} = B| W = {有事}, T < T^*_{有事} ) \equiv 1-f \\
-    & P(m_{内閣} = A| W = {平時}, T > T^*_{有事}) \equiv g \\
-    & P(m_{内閣} = B| W = {平時}, T > T^*_{有事} ) \equiv 1-g \\
-    & P(m_{内閣} = A| W = {平時}, T < T^*_{有事}) \equiv h \\
-    & P(m_{内閣} = B| W = {平時}, T < T^*_{有事} ) \equiv 1-h
+    & P(m_{内閣} = A| W = {平時}, T > T^*_{平時}) \equiv g \\
+    & P(m_{内閣} = B| W = {平時}, T > T^*_{平時} ) \equiv 1-g \\
+    & P(m_{内閣} = A| W = {平時}, T < T^*_{平時}) \equiv h \\
+    & P(m_{内閣} = B| W = {平時}, T < T^*_{平時} ) \equiv 1-h
 \end{align*}
 
 国会の最適反応を考えるにあたって必要なことは、国会の立場から見たときの、
@@ -68,30 +68,40 @@
 $$P(W={有事}) = p, \quad P(W={平時}) = 1-p$$
 
 
-$T \sim U(0,1)$より、$r_{有事} \equiv \int_0^{T^*_{有事}} f(T)dT \quad {とすると、}$
+$T \sim U(0,1)$より、$r \equiv P(T<T^*)$ とすると、 
 \begin{align*}
-    P(T>T^*_{有事}) &= \int_{T^*_{有事}}^1 f(T)dT\\
-    &= 1- \int_0^{T^*_{有事}} f(T)dT = 1-r_{有事}\\[0.5em]
-    &= 1- \int_0^{ \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } } f(T)dT\\[0.5em]
-    &= 1 - \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }\\[0.5em]
-    &= \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } 
+    P(T>T^*_{有事}) = 1-r_{有事} = 
+    \begin{cases}
+        1 \quad &(T^*_{有事} < 0)\\
+        1-T^*_{有事} \quad &(0\le T^*_{有事} \le 1)\\
+        0 \quad &(1 < T^*_{有事} )\\
+    \end{cases}
 \end{align*}
 \begin{align*}
-    P(T<T^*_{有事}) &= \int_0^{T^*_{有事}} f(T)dT
-    = r_{有事}\\[0.5em]
-    &= \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }
+    P(T<T^*_{有事}) = r_{有事} = 
+    \begin{cases}
+        0 \quad &(T^*_{有事} < 0)\\
+        T^*_{有事} \quad &(0\le T^*_{有事} \le 1)\\
+        1 \quad &(1 < T^*_{有事} )\\
+    \end{cases}
 \end{align*}
 \begin{align*}
-    P(T>T^*_{平時}) &= 1- \int_0^{T^*_{平時}} f(T)dT =  1-r_{平時}\\
-    &= 1- \int_0^{\frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }} f(T)dT\\[0.5em]
-    &= 1 - \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }\\[0.5em]
-    &= \frac{ \alpha-\beta  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }
+    P(T>T^*_{平時}) = 1-r_{平時} = 
+    \begin{cases}
+        1 \quad &(T^*_{平時} < 0)\\
+        1-T^*_{平時} \quad &(0\le T^*_{平時} \le 1)\\
+        0 \quad &(1 < T^*_{平時} )\\
+    \end{cases}
 \end{align*}
 \begin{align*}
-    P(T<T^*_{平時}) &= \int_0^{T^*_{平時}} f(T)dT = r_{平時}\\
-    &= \int_0^{\frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }}\\[0.5em]
-    &= \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }
+    P(T<T^*_{平時}) = r_{平時} = 
+    \begin{cases}
+        0 \quad &(T^*_{平時} < 0)\\
+        T^*_{平時} \quad &(0\le T^*_{平時} \le 1)\\
+        1 \quad &(1 < T^*_{平時} )\\
+    \end{cases}
 \end{align*}
+
 
 以下、$r_{有事}, r_{平時}$の表記を使う。これを用いて、\footnote{TODO:余力あれば、この意味を確かめる。時系列的に独立ではないが、無相関？？}
 \begin{align*}
