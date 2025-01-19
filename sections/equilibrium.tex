@@ -59,6 +59,63 @@
     &\quad + \frac{ (1-p)(1-r_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) +  (1-p)(1-r_{平時}) }
 \end{align*}
 
+\bigskip
+まず、$T^*$が全て内点、つまり$0<T^*_{有事}<1,\quad 0<T^*_{平時}<1,$の場合を考える。\\
+この時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{ p(1-T^*_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事})  + (1-p)(1-T^*_{平時}) }\\[1em]
+    &\quad + \frac{ (1-p)(1-T^*_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-T^*_{有事}) +  (1-p)(1-T^*_{平時}) }
+\end{align*}
+
+
+仮定5より、$0 < V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} $ \\
+仮定7より、$0 > V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2}$である。
+
+分母は正になるので、分子だけを考えると、
+
+\begin{align*}
+    &p(1-T^*_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})    +    (1-p)(1-T^*_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= p( \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +    (1-p)(  \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= (\alpha - \beta) p( \frac{ 1 }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +     (\alpha - \beta)(1-p)(  \frac{ 1 }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= (\alpha - \beta) p( \frac{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } )  \\[0.5em]
+    &\quad    +     (\alpha - \beta)(1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2}  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )\\[1em]
+    &= (\alpha - \beta) \Big\{ \quad p( \frac{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } )  \\[0.5em]
+    &\quad\quad\quad\quad\quad\quad    +     (1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2}  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )\Big\}\\[1em]
+    &= (\alpha - \beta)×\\
+    &\quad \Big\{  p( \frac{ V'_{A1} -V'_{B1} + \delta_H (V'_{A2} - V'_{B2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    +(1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H (V_{A2} - V_{B2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+    &= (\alpha - \beta)×\\
+    &\quad \Big\{  -p( \frac{  V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    -(1-p)(  \frac{ V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+    &= (\beta - \alpha)×\\
+    &\quad \Big\{  p( \frac{  V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    +(1-p)(  \frac{ V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+\end{align*}
+
+
+これが、正になる条件は、
+\begin{align*}
+    &p( \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +    (1-p)(  \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )  > 0\\[1em]
+\end{align*}
+
+
+$T^*$がどちらも内点を取る場合は、$\alpha - \beta > 0$なので、
+\begin{align*}
+    &p( \frac{ 1 }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +    (1-p)(  \frac{ 1 }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )  > 0\\[1em]
+\end{align*}
+
+$T^*$がどちらも内点を取る場合は、$T^*の分母 > 0$なので、
+\begin{align*}
+    &p(  \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +    (1-p)( \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )  > 0\\[1em]
+\end{align*}
+
+以下、$V_{A2}, V_{B2}$の大小関係で
 
 
 
@@ -66,5 +123,26 @@
 
 
 
+WIPメモ
+\begin{align*}
+    \frac{ p( \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} ) }{ (1-p)( \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} ) }    >    - \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} }{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} } \\[1em]
+\end{align*}
 
+
+
+
+\begin{definition} \Large$T^*_{有事} = \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+\begin{definition} \Large$1 - T^*_{有事} = \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+
+\begin{definition} \Large$T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+\begin{definition} \Large$1 - T^*_{平時} = \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+
+
+
+
+\theendnotes
 \end{document}
