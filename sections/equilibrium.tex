@@ -3,52 +3,8 @@
 
 \section{均衡}
 
-内閣の純粋戦略は以下の4つになる。\footnote{TODO:どうやって16個から減らしたかをかく。結局端点を見るので減らないが。}
-\begin{align*}
-    \begin{cases}
-        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
-        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
-        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
-        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
-    \end{cases}
-    \begin{cases}
-        \rightarrow B\\
-        \rightarrow A\\
-        \rightarrow B\\
-        \rightarrow A\\
-    \end{cases}
-    \begin{cases}
-        \rightarrow A\\
-        \rightarrow B\\
-        \rightarrow B\\
-        \rightarrow A\\
-    \end{cases}
-    \begin{cases}
-        \rightarrow B\\
-        \rightarrow A\\
-        \rightarrow A\\
-        \rightarrow B\\
-    \end{cases}
-\end{align*}
 
-それぞれの戦略でベイジアンナッシュ均衡になる条件を求める。
-
-\bigskip
-\noindent
-\underline{戦略1. (A,B,A,B)}
-
-次の戦略を考える。
-\begin{align*}
-    \begin{cases}
-        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
-        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
-        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
-        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
-    \end{cases}
-\end{align*}
-
-この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,1,0)$となる。
-後手の国会の最適反応を明らかにするために、先手の内閣の行動で場合分けして考える。
+\subsection{$T^*$が全て内点に存在する場合}
 
 \bigskip
 まず、$T^*$が全て内点、つまり$0<T^*_{有事}<1,\quad 0<T^*_{平時}<1,$の場合を考える。\\
@@ -68,6 +24,60 @@
         0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{A2} < V_{B2}
     \end{cases}
 \end{align*}
+
+
+
+$T^*$が全て内点に存在する場合、$T^*$を境目として内閣の最適反応が変化する必要がある。
+よって内閣の純粋戦略は以下の4つになる。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow A\\
+        \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+
+
+
+まず1つ目の戦略でベイジアンナッシュ均衡になる条件を求める。
+
+\bigskip
+\noindent
+\underline{戦略1. (A,B,A,B)}
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,1,0)$となる。
+後手の国会の最適反応を明らかにするために、先手の内閣の行動で場合分けして考える。
+
 
 
 (i)$m_{内閣}=A$の場合：
@@ -187,7 +197,7 @@ $p \Big( X'Y - XY' \Big) + XY'>0$の場合とはつまり、
 
 
 \bigskip
-(i)$m_{内閣}=B$の場合：
+(ii)$m_{内閣}=B$の場合：
 \begin{align*}
     & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = B  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = B  ]\\[1em]
     &= \frac{ \{(1-e)p(1-r_{有事}) +  (1-f)pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
@@ -222,20 +232,115 @@ $$Y  -\alpha + \beta = V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2})$$
 \begin{align*}
     &= -p \frac{ Y' -\alpha + \beta }{ Y' } X'  -    (1-p) \frac{ Y  -\alpha + \beta }{ Y }X\\[0.5em]
     &= -p \frac{ X'Y' - X'(\alpha - \beta) }{ Y'}   -    (1-p) \frac{ XY - X(\alpha - \beta) }{ Y }\\[0.5em]
-    &= -p \frac{ X'Y'Y - X'Y(\alpha - \beta) }{ Y'Y}   -    (1-p) \frac{ XY'Y - XY'(\alpha - \beta) }{Y' Y }\\[0.5em]
-    &= p \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y}   +   (1-p) \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y }\\[0.5em]
-    &= p \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y}   +   \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } - p \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y }\\[0.5em]
-    &= p \Big\{ \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y} - \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } \Big\}   +   \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } \\[0.5em]
-    &= \frac{1}{Y'Y} \Big\{ p \{ X'Y(\alpha - \beta) - X'Y'Y  - XY'(\alpha - \beta) - XY'Y  \}   +   XY'(\alpha - \beta) - XY'Y  \Big\}\\[0.5em]
+    &= -p \frac{ X'Y' - X'(\alpha - \beta) }{ Y'}   -   \frac{ XY - X(\alpha - \beta) }{ Y } + p\frac{ XY - X(\alpha - \beta) }{ Y }\\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p \{ X'Y'Y - X'Y(\alpha - \beta) \}   -    (1-p) \{ XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    \{XY'Y - XY'(\alpha - \beta)\} + p\{XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    XY'Y + XY'(\alpha - \beta) + pXY'Y - pXY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{  - X'Y'Y + X'Y(\alpha - \beta)    + XY'Y - XY'(\alpha - \beta) \} -XY'Y + XY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{ X'Y(\alpha - \beta) - XY'(\alpha - \beta) - X'Y'Y + XY'Y  \} -XY'Y + XY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) \Big\} 
+\end{align*}
+
+$Y'Y>0$より、$p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta)$の正負が全体の正負となる。
+よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
+\begin{align*}
+    \begin{cases}
+        p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) > 0  &\;\Rightarrow\; a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) < 0 &\;\Rightarrow\; a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
 \end{align*}
 
 
-%&= \frac{1}{Y'Y} \Big\{ -p \{ X'Y'Y - X'Y(\alpha - \beta) \}   -    (1-p) \{ XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
-%&= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    \{XY'Y - XY'(\alpha - \beta)\} + p\{XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
-%&= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    XY'Y + XY'(\alpha - \beta) + pXY'Y - pXY'(\alpha - \beta) \Big\} \\[0.5em]
+\bigskip
+まとめると、\\
+\noindent
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (2)\; p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\noindent
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    \begin{cases}
+        (3) p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) > 0  &\Rightarrow a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        (4) p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) < 0 &\Rightarrow a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+内閣の最適反応は、有事・平時の場合ごとにそれぞれ以下の期待値の差分によって決まる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q(x-y)\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
+\end{align*}
 
 
 
+ここでは$T^*$が全て内点に存在する場合を考えているので、どちらの場合でも有事-(i),平時-(i)の条件より、$T$の係数は正である。
+よって国会の最適反応を所与とした、内閣の最適反応は以下となる。
+\begin{align*}
+    \begin{cases}
+        (1),(3)が成立 &\Rightarrow (x,y)=(1,1) \quad \Rightarrow 差分=0で無差別\\
+        (1),(4)が成立 &\Rightarrow (x,y)=(1,0) \quad \Rightarrow T>T^* なら m^*_{内閣}=A,\;\; T<T^* なら m^*_{内閣}=B\\
+        (2),(3)が成立 &\Rightarrow (x,y)=(0,1) \quad \Rightarrow T>T^* なら m^*_{内閣}=B,\;\; T<T^* なら m^*_{内閣}=A\\
+        (2),(4)が成立 &\Rightarrow (x,y)=(0,0) \quad \Rightarrow 差分=0で無差別\\
+     \end{cases}
+\end{align*}
+
+いま検討している戦略は以下であった。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+内閣の最適反応が無差別となる場合はここでは除外する。
+
+この内閣の戦略が均衡となるには、(1),(4)の成立が必要である。よって、$T^*$が全て内点に存在する場合、この戦略1. (A,B,A,B)は条件1〜5に加え、
+以下の条件のもとで均衡戦略となる。
+
+
+\begin{align*}
+    p\text{に関する条件} \Leftrightarrow 
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \\[0.5em]
+        (4) p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) < 0 \\[0.5em] 
+     \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{国会の最適反応} \Leftrightarrow 
+    \begin{cases}
+        a^*_{国会}(\delta_{市民}=\delta_L) = B \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = A) = A \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = B) = B \\[0.5em]
+     \end{cases}
+\end{align*}
+
+
+\begin{align*}
+    \text{有事-(i)かつ平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        0 \le \delta_{内閣} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}<1\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{A2} < V_{B2}
+    \end{cases}
+\end{align*}
 
 
 
