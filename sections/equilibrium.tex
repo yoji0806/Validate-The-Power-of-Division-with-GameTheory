@@ -50,15 +50,6 @@
 この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,1,0)$となる。
 後手の国会の最適反応を明らかにするために、先手の内閣の行動で場合分けして考える。
 
-(i)$m_{内閣}=A$の場合：
-\begin{align*}
-    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = A  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = A  ]\\[1em]
-    &= \frac{ \{ep(1-r_{有事}) +  fpr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
-    &\quad + \frac{ \{g(1-p)(1-r_{平時}) + h(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
-    &= \frac{ p(1-r_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事})  + (1-p)(1-r_{平時}) }\\[1em]
-    &\quad + \frac{ (1-p)(1-r_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) +  (1-p)(1-r_{平時}) }
-\end{align*}
-
 \bigskip
 まず、$T^*$が全て内点、つまり$0<T^*_{有事}<1,\quad 0<T^*_{平時}<1,$の場合を考える。\\
 この時、有事-(i)かつ平時-(i)の条件の成立が必要であった。改めて書くと\\
@@ -79,7 +70,16 @@
 \end{align*}
 
 
-また、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = A  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = A  ]\\[1em]
+    &= \frac{ \{ep(1-r_{有事}) +  fpr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{g(1-p)(1-r_{平時}) + h(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ p(1-r_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事})  + (1-p)(1-r_{平時}) }\\[1em]
+    &\quad + \frac{ (1-p)(1-r_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) +  (1-p)(1-r_{平時}) }
+\end{align*}
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
 
 \begin{align*}
     &= \frac{ p(1-T^*_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事})  + (1-p)(1-T^*_{平時}) }\\[1em]
@@ -159,17 +159,12 @@
 すると差分は
 \begin{align*}
     &= (\beta - \alpha) × \Big\{  p \Big( \frac{X'}{Y'} \Big) +(1-p) \Big(  \frac{X}{Y} \Big) \Big\}\\[1em]
-    &= (\beta - \alpha) × \Big\{  p \frac{X'}{Y'}  + \frac{X}{Y} -p \frac{X}{Y}  \Big\}\\[1em]
-    &= (\beta - \alpha) × \Big\{  p \Big( \frac{X'}{Y'} - \frac{X}{Y} \Big) + \frac{X}{Y}   \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p \Big( X'Y \Big) +(1-p) \Big(  XY' \Big) \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p X'Y  + XY' -p XY'  \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p \Big( X'Y - XY' \Big) + XY'   \Big\}
 \end{align*}
 
-$\frac{X'}{Y'} - \frac{X}{Y} > 0$であれば、全体は負になる。
-$\frac{X'}{Y'} - \frac{X}{Y} < 0$であれば、追加の場合分けが必要で、
-\begin{align*}
-    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p \Big( X'Y - XY' \Big) + XY'   \Big\}\\[1em]
-\end{align*}
-
-と変形すると、$Y'Y>0$なので、$ p \Big( X'Y - XY' \Big) + XY'$の正負が、そのまま全体の正負となる。
+となり、$Y'Y>0$なので、$ p \Big( X'Y - XY' \Big) + XY'$の正負が、そのまま全体の正負となる。
 $p \Big( X'Y - XY' \Big) + XY'>0$の場合とはつまり、
 \begin{align*}
     & p \Big( X'Y - XY' \Big) + XY' > 0\\
@@ -185,11 +180,66 @@ $p \Big( X'Y - XY' \Big) + XY'>0$の場合とはつまり、
 よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
 \begin{align*}
     \begin{cases}
-        \frac{X'}{Y'} - \frac{X}{Y} > 0 \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H) = B\\[0.5em]
-        \frac{X'}{Y'} - \frac{X}{Y} < 0,\quad p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H) = A\\[0.5em]
-        \frac{X'}{Y'} - \frac{X}{Y} < 0,\quad p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H) = B\\[0.5em] 
+        p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
      \end{cases}
 \end{align*}
+
+
+\bigskip
+(i)$m_{内閣}=B$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = B  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = B  ]\\[1em]
+    &= \frac{ \{(1-e)p(1-r_{有事}) +  (1-f)pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-g)(1-p)(1-r_{平時}) + (1-h)(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{  pr_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事}) +(1-p)(1-r_{平時})  }\\[1em]
+    &\quad + \frac{ (1-p)r_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) + (1-p)(1-r_{平時})  }
+\end{align*}
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{  pT^*_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事}) +(1-p)(1-T^*_{平時})  }\\[1em]
+    &\quad + \frac{ (1-p)T^*_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-T^*_{有事}) + (1-p)(1-T^*_{平時})  }
+\end{align*}
+
+分母は正になるので、分子だけを考える。
+\begin{align*}
+    &pT^*_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2}) + (1-p)T^*_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2})\\[1em]
+    &= p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})\\[1em]
+    &\quad + (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2})\\[1em]
+    &= p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}(V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } (V'_{A1} -V'_{B1} + \delta_H (V'_{A2} - V'_{B2}))\\[1em]
+    &\quad + (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V_{A2}) }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) }(V_{A1} - V_{B1} + \delta_H (V_{A2} - V_{B2}))\\[1em]
+    &= -p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}(V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } (V'_{B1} -V'_{A1} + \delta_H (V'_{B2} - V'_{A2}))\\[1em]
+    &\quad - (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V_{A2}) }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) }(V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2}))\\[1em]
+\end{align*}
+
+
+同じく、$X', Y', X, Y$を用いて、
+$$Y' -\alpha + \beta = V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2})$$
+$$Y  -\alpha + \beta = V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2})$$
+となることに注意すると、
+\begin{align*}
+    &= -p \frac{ Y' -\alpha + \beta }{ Y' } X'  -    (1-p) \frac{ Y  -\alpha + \beta }{ Y }X\\[0.5em]
+    &= -p \frac{ X'Y' - X'(\alpha - \beta) }{ Y'}   -    (1-p) \frac{ XY - X(\alpha - \beta) }{ Y }\\[0.5em]
+    &= -p \frac{ X'Y'Y - X'Y(\alpha - \beta) }{ Y'Y}   -    (1-p) \frac{ XY'Y - XY'(\alpha - \beta) }{Y' Y }\\[0.5em]
+    &= p \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y}   +   (1-p) \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y }\\[0.5em]
+    &= p \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y}   +   \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } - p \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y }\\[0.5em]
+    &= p \Big\{ \frac{ X'Y(\alpha - \beta) - X'Y'Y  }{ Y'Y} - \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } \Big\}   +   \frac{ XY'(\alpha - \beta) - XY'Y }{Y' Y } \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{ X'Y(\alpha - \beta) - X'Y'Y  - XY'(\alpha - \beta) - XY'Y  \}   +   XY'(\alpha - \beta) - XY'Y  \Big\}\\[0.5em]
+\end{align*}
+
+
+%&= \frac{1}{Y'Y} \Big\{ -p \{ X'Y'Y - X'Y(\alpha - \beta) \}   -    (1-p) \{ XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+%&= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    \{XY'Y - XY'(\alpha - \beta)\} + p\{XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+%&= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    XY'Y + XY'(\alpha - \beta) + pXY'Y - pXY'(\alpha - \beta) \Big\} \\[0.5em]
+
+
+
+
+
+
+
 
 
 \newpage
