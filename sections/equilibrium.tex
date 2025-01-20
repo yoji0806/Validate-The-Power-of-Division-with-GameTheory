@@ -845,58 +845,89 @@ $p \Big\{  -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) \Big\} - XY'(\alpha
 これも戦略3と同じ理由で均衡にならない。
 
 
-\bigskip
-各均衡を考察してみる。
+\subsection{考察}
+均衡を考察する。
 
-まず戦略
-
-
+戦略.1（A,B,A,B）では、国会は内閣のメッセージをそのまま承認することが最適反応であった。
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
-WIPメモ
-
-- TODO：全て内点では、$\delta_{内閣}$が小さくなる。→そうでないのもいくつかみる。おもしろなのに当たりをつけて調べる。
-
+この時、$(x, y) = (1,0)$となるため、内閣の有事における期待値は以下のようになる。
 \begin{align*}
-    \frac{ p( \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} ) }{ (1-p)( \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} ) }    >    - \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} }{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} } \\[1em]
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace\\
+    &= q \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+これを内閣の私欲（独自の正義感）パラメーター$T$で微分すると、
+$$ q(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) $$
+$q$は市民が賢民($\delta_H$)になる確率を表す。
+$T^*$が全て内点に存在する場合、$\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}>0$となるので、この値は正の値を取る。
+つまり、私欲が増せば増すほど、内閣は予防的政策(A)を主張しやすくなる。これは、内点の仮定から生じた条件$\alpha>\beta$、つまり内閣は予防的政策(A)を世界の状況に関係なく選好していることが理由に挙げられる。
+
+また別の見方では、この内閣は実は有事であっても、非予防的政策(B)を選好する部分がある。それは、内点の仮定の$0\le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$から生じる。
+この条件は、内閣の時間割引率が低いことを表しており、有事において社会厚生的に頓珍漢な振る舞いをする可能性があるということだ。\\
+しかし、こういった頓珍漢な内閣であっても、有事においては私欲が強い内閣が政権を握ることで結果的に市民が喜ぶこともある。
+その際に重要な点は、このモデルでは共有情報としている$\alpha, \beta$、つまり政治家ごとの方針の好みを正確に把握することが重要である。
+また、市民および国会にとっては観測できない内閣の私欲パラメータも、実際にはメッセージなどの歴史を通じて、ある程度予想できると思う。
+
+
+平時においては、内閣の期待値は以下のようになる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
 \end{align*}
 
+これも$T$で微分すると、
+$$q\lbrace (\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   )$$
+となり、有事と同じことが言える。\\
 
 
 
-\begin{definition} \Large$T^*_{有事} = \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+また、この2つの均衡に共通して言えることは、内閣の時間割引率$\delta_{内閣}$が賢民の時間割引率$\delta_H$よりも低くなる必要があるということである。
+これは、$T^*$が全て内点に存在する場合には、$0\le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$を満たす必要があることが理由である。
+この値はどれくらい低いかというと、ちょうど市民が愚民($\delta_L$)である時の時間割引率の範囲と等しい。
+つまりこれらの均衡での内閣は、とても近視眼的な選好を持っていることがわかる。
 
-\begin{definition} \Large$1 - T^*_{有事} = \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
 
 
-\begin{definition} \Large$T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
 
-\begin{definition} \Large$1 - T^*_{平時} = \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+% WIPメモ
+
+% - TODO：全て内点では、$\delta_{内閣}$が小さくなる。→そうでないのもいくつかみる。おもしろなのに当たりをつけて調べる。
+
+% \begin{align*}
+%     \frac{ p( \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} ) }{ (1-p)( \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} ) }    >    - \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} }{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} } \\[1em]
+% \end{align*}
+
+
+
+
+% \begin{definition} \Large$T^*_{有事} = \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+% \begin{definition} \Large$1 - T^*_{有事} = \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+
+% \begin{definition} \Large$T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+% \begin{definition} \Large$1 - T^*_{平時} = \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
 
 
 
