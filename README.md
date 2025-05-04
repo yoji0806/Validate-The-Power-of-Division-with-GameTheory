@@ -1,7 +1,9 @@
 # Validating the robustness of division of power with game theory.  
 
 最新版の論文は[こちら](./main.pdf)。  
-多少の未完部分があるので、また時間を見つけて更新していきます。（2025/05/04時点）
+まだ考えたい部分あるので、時間を見つけて更新していきます。（2025/05/04時点）
+
+質問等などはissueでお願いします。
 
 
 <br><br><br>
