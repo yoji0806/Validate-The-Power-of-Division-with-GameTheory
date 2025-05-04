@@ -17,6 +17,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{caption}
 \usepackage{subfiles}
+\usepackage{booktabs}
 %\usepackage{natbib}
 %\usepackage{bm,mathrsfs}
 
@@ -54,6 +55,8 @@
 \theoremstyle{roman}
 \newtheorem*{definition}{定義} 
 \newtheorem{assumption}{仮定}
+\newtheorem{condition}{条件}
+\newtheorem{lemma}{補題}
 \newtheorem{proposition}{命題}
 \newtheorem{theorem}{定理}
 
@@ -103,7 +106,6 @@ pdfstartpage={}]{hyperref}
 %--------   本文   -----------------
 \begin{document}
 
-
 \subfile{sections/title}
 
 \subfile{sections/abstract}
@@ -114,11 +116,13 @@ pdfstartpage={}]{hyperref}
 
 \subfile{sections/model}
 
-\subfile{sections/best_response_congress}
-
 \subfile{sections/best_response_cabinet}
 
+\subfile{sections/best_response_congress}
+
 \subfile{sections/equilibrium}
+
+\subfile{sections/conclusion}
 
 \subfile{sections/acknowledgement}
 

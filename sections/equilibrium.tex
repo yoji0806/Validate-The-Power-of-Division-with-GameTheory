@@ -4,6 +4,988 @@
 \section{均衡}
 
 
+\subsection{$T^*$が全て内点に存在する場合}
+
+\bigskip
+ここでは、$T^*$が全て内点、つまり$0<T^*_{有事}<1,\quad 0<T^*_{平時}<1,$の場合を考える。
+この時、有事-(i)かつ平時-(i)の条件の成立が必要であった。改めて書くと\\
+
+有事-(i)$\Leftrightarrow 0<T^*_{有事}<1,\quad \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} > 0$
+
+平時-(i)$\Leftrightarrow 0<T^*_{平時}<1,\quad \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} > 0$
+
+\begin{align*}
+    \text{有事-(i)かつ平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        0 \le \delta_{内閣} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}<1\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{A2} < V_{B2}
+    \end{cases}
+\end{align*}
+
+
+
+$T^*$が全て内点に存在する場合、$T^*$を境目として内閣の最適反応が変化する必要がある。
+よって内閣の純粋戦略は以下の4つになる。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow A\\
+        \rightarrow B\\
+        \rightarrow B\\
+        \rightarrow A\\
+    \end{cases}
+    \begin{cases}
+        \rightarrow B\\
+        \rightarrow A\\
+        \rightarrow A\\
+        \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+
+
+
+まず1つ目の戦略でベイジアンナッシュ均衡になる条件を求める。
+
+\bigskip
+\noindent
+\underline{戦略1. (A,B,A,B)}
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,1,0)$となる。
+後手の国会の最適反応を明らかにするために、先手の内閣の行動で場合分けして考える。
+
+
+
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = A  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = A  ]\\[1em]
+    &= \frac{ \{ep(1-r_{有事}) +  fpr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{g(1-p)(1-r_{平時}) + h(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ p(1-r_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事})  + (1-p)(1-r_{平時}) }\\[1em]
+    &\quad + \frac{ (1-p)(1-r_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) +  (1-p)(1-r_{平時}) }
+\end{align*}
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{ p(1-T^*_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事})  + (1-p)(1-T^*_{平時}) }\\[1em]
+    &\quad + \frac{ (1-p)(1-T^*_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-T^*_{有事}) +  (1-p)(1-T^*_{平時}) }
+\end{align*}
+
+
+分母は正になるので、分子だけを考える。
+以下の定義を思い出すと、
+
+\begin{definition} \Large$1 - T^*_{有事} = \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+\begin{definition} \Large$1 - T^*_{平時} = \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+
+
+\begin{align*}
+    &p(1-T^*_{有事}) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})    +    (1-p)(1-T^*_{平時})(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= p( \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +    (1-p)(  \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= (\alpha - \beta) p( \frac{ 1 }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } ) (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\
+    &\quad    +     (\alpha - \beta)(1-p)(  \frac{ 1 }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= (\alpha - \beta) p( \frac{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } )  \\[0.5em]
+    &\quad    +     (\alpha - \beta)(1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2}  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )\\[1em]
+    &= (\alpha - \beta) \Big\{ \quad p( \frac{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } )  \\[0.5em]
+    &\quad\quad\quad\quad\quad\quad    +     (1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2}  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } )\Big\}\\[1em]
+    &= (\alpha - \beta)×\\
+    &\quad \Big\{  p( \frac{ V'_{A1} -V'_{B1} + \delta_H (V'_{A2} - V'_{B2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    +(1-p)(  \frac{ V_{A1} - V_{B1} + \delta_H (V_{A2} - V_{B2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+    &= (\alpha - \beta)×\\
+    &\quad \Big\{  -p( \frac{  V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    -(1-p)(  \frac{ V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+    &= (\beta - \alpha)×\\
+    &\quad \Big\{  p( \frac{  V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } )  
+                    +(1-p)(  \frac{ V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2})  }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) } )\Big\}\\[1em]
+\end{align*}
+
+
+\noindent
+仮定5より、
+\begin{align*}
+    & V'_{B1}  + \delta_H V'_{B2} < V'_{A1}  + \delta_H V'_{A2}\\
+    &V'_{B1} -V'_{A1} + \delta_H( V'_{B2} - V'_{A2}) < 0
+\end{align*}
+
+仮定7より、
+\begin{align*}
+    & V_{A1}  + \delta_{市民} V_{A2} < V_{B1} +  \delta_{市民} V_{B2}\\
+    & -V_{B1} + V_{A1} + \delta_{市民} V_{A2} - \delta_{市民} V_{B2} < 0\\
+    & V_{B1} - V_{A1} + \delta_{市民} V_{B2} - \delta_{市民} V_{A2}  > 0\\
+    & V_{B1} - V_{A1} + \delta_{市民} (V_{B2} - V_{A2}) > 0\\
+    & V_{B1} - V_{A1} + \delta_{H} (V_{B2} - V_{A2}) > 0\\
+\end{align*}
+
+有事-(i)より、$\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} > 0$
+
+平時-(i)より、$\alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} > 0$
+
+有事-(i)かつ平時-(i)より、$\beta < \alpha$
+
+となり、全ての項の正負が明らかになる。しかし、全体の正負は不明なので場合分けをして考える。
+見やすくするために、以下のように変数を置く。
+
+\begin{align*}
+    V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) &\equiv X' < 0\\
+    \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) &\equiv Y' > 0\\
+    V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2}) &\equiv X > 0\\
+    \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) &\equiv Y > 0\\[1em]
+    \frac{X'}{Y'} < 0,\quad \frac{X}{Y} > 0
+\end{align*}
+
+すると差分は
+\begin{align*}
+    &= (\beta - \alpha) × \Big\{  p \Big( \frac{X'}{Y'} \Big) +(1-p) \Big(  \frac{X}{Y} \Big) \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p \Big( X'Y \Big) +(1-p) \Big(  XY' \Big) \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p X'Y  + XY' -p XY'  \Big\}\\[1em]
+    &= (\beta - \alpha) × \frac{1}{Y'Y} \Big\{  p \Big( X'Y - XY' \Big) + XY'   \Big\}
+\end{align*}
+
+となり、$Y'Y>0$なので、$ p \Big( X'Y - XY' \Big) + XY'$の正負が、そのまま全体の正負となる。
+$p \Big( X'Y - XY' \Big) + XY'>0$の場合とはつまり、
+\begin{align*}
+    & p \Big( X'Y - XY' \Big) + XY' > 0\\
+    & p \Big( X'Y - XY' \Big)  > -  XY'\\
+    & p \Big(XY' - X'Y  \Big)  <  XY'\\[0.5em]
+    & XY'>0,\quad X'Y<0より、\quad XY' - X'Y>0なので、\\[1em]
+    & p   <  \frac{XY'}{XY' - X'Y}
+\end{align*}
+
+であり、$p \Big( X'Y - XY' \Big) + XY'<0$の場合とは、$p   >  \frac{XY'}{XY' - X'Y}$である。
+
+
+よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
+\begin{align*}
+    \begin{cases}
+        p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\bigskip
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = B  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = B  ]\\[1em]
+    &= \frac{ \{(1-e)p(1-r_{有事}) +  (1-f)pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-g)(1-p)(1-r_{平時}) + (1-h)(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{  pr_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事}) +(1-p)(1-r_{平時})  }\\[1em]
+    &\quad + \frac{ (1-p)r_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) + (1-p)(1-r_{平時})  }
+\end{align*}
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{  pT^*_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事}) +(1-p)(1-T^*_{平時})  }\\[1em]
+    &\quad + \frac{ (1-p)T^*_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-T^*_{有事}) + (1-p)(1-T^*_{平時})  }
+\end{align*}
+
+分母は正になるので、分子だけを考える。
+\begin{align*}
+    &pT^*_{有事}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2}) + (1-p)T^*_{平時}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2})\\[1em]
+    &= p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})\\[1em]
+    &\quad + (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2})\\[1em]
+    &= p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}(V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } (V'_{A1} -V'_{B1} + \delta_H (V'_{A2} - V'_{B2}))\\[1em]
+    &\quad + (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V_{A2}) }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) }(V_{A1} - V_{B1} + \delta_H (V_{A2} - V_{B2}))\\[1em]
+    &= -p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}(V'_{B2} - V'_{A2}) }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) } (V'_{B1} -V'_{A1} + \delta_H (V'_{B2} - V'_{A2}))\\[1em]
+    &\quad - (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}(V_{B2} - V_{A2}) }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) }(V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2}))\\[1em]
+\end{align*}
+
+
+同じく、$X', Y', X, Y$を用いて、
+$$Y' -\alpha + \beta = V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2})$$
+$$Y  -\alpha + \beta = V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2})$$
+となることに注意すると、
+\begin{align*}
+    &= -p \frac{ Y' -\alpha + \beta }{ Y' } X'  -    (1-p) \frac{ Y  -\alpha + \beta }{ Y }X\\[0.5em]
+    &= -p \frac{ X'Y' - X'(\alpha - \beta) }{ Y'}   -    (1-p) \frac{ XY - X(\alpha - \beta) }{ Y }\\[0.5em]
+    &= -p \frac{ X'Y' - X'(\alpha - \beta) }{ Y'}   -   \frac{ XY - X(\alpha - \beta) }{ Y } + p\frac{ XY - X(\alpha - \beta) }{ Y }\\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p \{ X'Y'Y - X'Y(\alpha - \beta) \}   -    (1-p) \{ XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    \{XY'Y - XY'(\alpha - \beta)\} + p\{XY'Y - XY'(\alpha - \beta)\} \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ -p X'Y'Y +p X'Y(\alpha - \beta)   -    XY'Y + XY'(\alpha - \beta) + pXY'Y - pXY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{  - X'Y'Y + X'Y(\alpha - \beta)    + XY'Y - XY'(\alpha - \beta) \} -XY'Y + XY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{ X'Y(\alpha - \beta) - XY'(\alpha - \beta) - X'Y'Y + XY'Y  \} -XY'Y + XY'(\alpha - \beta) \Big\} \\[0.5em]
+    &= \frac{1}{Y'Y} \Big\{ p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) \Big\} 
+\end{align*}
+
+$Y'Y>0$より、$p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta)$の正負が全体の正負となる。
+これが正となる条件は、\\
+$\alpha - \beta > 0$, $X'Y - XY' < 0,\; Y'Y > 0,\; X - X' > 0$なので
+
+\begin{align*}
+    &p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} -XY'Y + XY'(\alpha - \beta) > 0\\[1em]
+    &p \{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X')  \} > XY'Y - XY'(\alpha - \beta)  \\[1em]
+    &p  < \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }  \\[1em]
+\end{align*}
+
+
+よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
+\begin{align*}
+    \begin{cases}
+        p  < \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\bigskip
+まとめると、\\
+\noindent
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (2)\; p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\noindent
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    \begin{cases}
+        (3)\; p  < \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        (4)\; p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+内閣の最適反応は、有事・平時の場合ごとにそれぞれ以下の期待値の差分によって決まる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q(x-y)\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
+\end{align*}
+
+
+
+ここでは$T^*$が全て内点に存在する場合を考えているので、どちらの場合でも有事-(i),平時-(i)の条件より、$T$の係数は正である。
+よって国会の最適反応を所与とした、内閣の最適反応は以下となる。
+\begin{align*}
+    \begin{cases}
+        (1),(3)が成立 &\Rightarrow (x,y)=(1,1) \quad \Rightarrow 差分=0で無差別\\
+        (1),(4)が成立 &\Rightarrow (x,y)=(1,0) \quad \Rightarrow T>T^* なら m^*_{内閣}=A,\;\; T<T^* なら m^*_{内閣}=B\\
+        (2),(3)が成立 &\Rightarrow (x,y)=(0,1) \quad \Rightarrow T>T^* なら m^*_{内閣}=B,\;\; T<T^* なら m^*_{内閣}=A\\
+        (2),(4)が成立 &\Rightarrow (x,y)=(0,0) \quad \Rightarrow 差分=0で無差別\\
+     \end{cases}
+\end{align*}
+
+いま検討している戦略は以下であった。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+内閣の最適反応が無差別となる場合はここでは除外する。
+
+この内閣の戦略が均衡となるには、(1),(4)の成立が必要である。よって、$T^*$が全て内点に存在する場合、この戦略1. (A,B,A,B)は条件1〜5に加え、
+以下の条件のもとで均衡戦略となる。
+
+
+\begin{align*}
+    p\text{に関する条件} \Leftrightarrow 
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \\[0.5em]
+        (4)\; p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') } \\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\begin{align*}
+    \text{有事-(i)かつ平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        0 \le \delta_{内閣} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}<1\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{A2} < V_{B2}
+    \end{cases}
+\end{align*}
+
+
+\begin{align*}
+    \text{国会の戦略} \Leftrightarrow 
+    \begin{cases}
+        a^*_{国会}(\delta_{市民}=\delta_L) = B \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = A) = A \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = B) = B \\[0.5em]
+     \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{内閣の戦略} \Leftrightarrow 
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip
+\noindent
+\underline{戦略2. (B,A,B,A)}
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow B\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow A\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow B\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow A\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (0,1,0,1)$となる。
+
+
+
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = A  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = A  ]\\[1em]
+    &= \frac{ \{ep(1-r_{有事}) +  fpr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{g(1-p)(1-r_{平時}) + h(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ \{ pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ pr_{有事} + (1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ pr_{有事} + (1-p)r_{平時} }\\[1em]
+    &= \frac{ \{ pT^*_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ pT^*_{有事} + (1-p)T^*_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)T^*_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ pT^*_{有事} + (1-p)T^*_{平時} }\\[1em]
+\end{align*}
+
+
+分母は正になるので、分子だけを考える。
+\begin{align*}
+    &= \{ pT^*_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})\\[1em]
+    &\quad + \{(1-p)T^*_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )\\[1em]
+    &= \{ p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } \}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})\\[1em]
+    &\quad + \{(1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )\\[1em]
+\end{align*}
+
+上と同じように、見やすくするために、以下のように変数を置く。
+
+\begin{align*}
+    V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) &\equiv X' < 0\\
+    \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) &\equiv Y' > 0\\
+    V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2}) &\equiv X > 0\\
+    \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) &\equiv Y > 0\\[1em]
+    \frac{X'}{Y'} < 0,\quad \frac{X}{Y} > 0
+\end{align*}
+
+すると差分は
+\begin{align*}
+    &= p\{ \frac{ Y'-\alpha + \beta }{ Y' } \}( -X' )  + \{(1-p) \frac{ Y-\alpha + \beta }{ Y } \}(-X )\\[1em]
+    &= -p \frac{ Y' -\alpha + \beta }{ Y' } X'  -    (1-p) \frac{ Y  -\alpha + \beta }{ Y }X
+\end{align*}
+
+これは、戦略.1の(ii)$m_{内閣}=B$の場合と同じ式である。よって、
+\begin{align*}
+\begin{cases}
+    (3)\; p  < \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+    (4)\; p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+ \end{cases}
+\end{align*}
+
+
+\bigskip
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = B  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = B  ]\\[1em]
+    &= \frac{ \{(1-e)p(1-r_{有事}) +  (1-f)pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-g)(1-p)(1-r_{平時}) + (1-h)(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ \{p(1-r_{有事}) \}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ pr_{有事} +(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)(1-r_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ pr_{有事} + (1-p)r_{平時} }
+\end{align*}
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{ \{p(1-T^*_{有事}) \}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ pT^*_{有事} +(1-p)T^*_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)(1-T^*_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ pT^*_{有事} + (1-p)T^*_{平時} }
+\end{align*}
+
+分母は正になるので、分子だけを考える。
+\begin{align*}
+    \{p(1-T^*_{有事}) \}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})    +   \{(1-p)(1-T^*_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )\\[1em]
+\end{align*}
+
+これは、戦略.1の(i)$m_{内閣}=A$の場合と同じ式である。よって、
+よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
+\begin{align*}
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        (2)\; p > \frac{XY'}{XY' - X'Y} \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\bigskip
+まとめると、\\
+\noindent
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    \begin{cases}
+        (3)\; p  < \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (4)\; p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') }  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\noindent
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y}  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (2)\; p > \frac{XY'}{XY' - X'Y}  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+内閣の最適反応は、有事・平時の場合ごとにそれぞれ以下の期待値の差分によって決まる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q(x-y)\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
+\end{align*}
+
+
+ここでは$T^*$が全て内点に存在する場合を考えているので、どちらの場合でも有事-(i),平時-(i)の条件より、$T$の係数は正である。
+よって国会の最適反応を所与とした、内閣の最適反応は以下となる。
+\begin{align*}
+    \begin{cases}
+        (3),(1)が成立 &\Rightarrow (x,y)=(1,1) \quad \Rightarrow 差分=0で無差別\\
+        (3),(2)が成立 &\Rightarrow (x,y)=(1,0) \quad \Rightarrow T>T^* なら m^*_{内閣}=A,\;\; T<T^* なら m^*_{内閣}=B\\
+        (4),(1)が成立 &\Rightarrow (x,y)=(0,1) \quad \Rightarrow T>T^* なら m^*_{内閣}=B,\;\; T<T^* なら m^*_{内閣}=A\\
+        (4),(1)が成立 &\Rightarrow (x,y)=(0,0) \quad \Rightarrow 差分=0で無差別\\
+     \end{cases}
+\end{align*}
+
+いま検討している戦略は以下であった。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow B\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow A\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow B\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow A
+    \end{cases}
+\end{align*}
+
+内閣の最適反応が無差別となる場合はここでは除外する。
+
+この内閣の戦略が均衡となるには、(4),(1)の成立が必要である。よって、$T^*$が全て内点に存在する場合、この戦略2. (B,A,B,A)は条件1〜5に加え、
+以下の条件のもとで均衡戦略となる。
+
+
+\begin{align*}
+    p\text{に関する条件} \Leftrightarrow 
+    \begin{cases}
+        (1)\; p < \frac{XY'}{XY' - X'Y} \\[0.5em]
+        (4)\; p  > \frac{XY'Y - XY'(\alpha - \beta)}{ (\alpha - \beta)( X'Y- XY')Y'Y(X - X') } 
+     \end{cases}
+\end{align*}
+
+
+\begin{align*}
+    \text{有事-(i)かつ平時-(i)} \Leftrightarrow 
+    \begin{cases}
+        \beta < \alpha, \\
+        0 \le \delta_{内閣} < \frac{V'_{B1}-V'_{A1}}{V'_{A2} - V'_{B2}}\\
+        0 \le \delta_{内閣} < \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}} \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}<1\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{B2} < V_{A2} \quad{かつ}\quad 1 \le \frac{\alpha-\beta + V_{B1}-V_{A1}}{V_{A2} - V_{B2}}\\
+        0 \le \delta_{内閣} \le 1 \quad&\text{if}\quad V_{A2} < V_{B2}
+    \end{cases}
+\end{align*}
+
+
+\begin{align*}
+    \text{国会の戦略} \Leftrightarrow 
+    \begin{cases}
+        a^*_{国会}(\delta_{市民}=\delta_L) = B \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = A) = B \\[0.5em]
+        a^*_{国会}(\delta_{市民}=\delta_H, m_{内閣} = B) = A \\[0.5em]
+     \end{cases}
+\end{align*}
+
+\begin{align*}
+    \text{内閣の戦略} \Leftrightarrow 
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow B\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow A\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow B\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow A\\[1em]
+    \end{cases}
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bigskip
+\noindent
+\underline{戦略3. (A,B,B,A)}
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow B\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow A\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (1,0,0,1)$となる。
+
+
+
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = A  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = A  ]\\[1em]
+    &= \frac{ \{ep(1-r_{有事}) +  fpr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{g(1-p)(1-r_{平時}) + h(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ \{p(1-r_{有事})\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事}) + (1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{ (1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) + (1-p)r_{平時} }\\
+\end{align*}
+
+分母は正になるので、分子だけを考える。$T^*$が全て内点に存在する場合は、$r=T^*$なので
+\begin{align*}
+    &= \{p(1-T^*_{有事})\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  \\[1em]
+    &\quad + \{ (1-p)T^*_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\
+    &= \{p \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } \} (V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})   \\[1em]
+    &\quad +    \{ (1-p) \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )\\[1em]
+\end{align*}
+
+上と同じように、見やすくするために以下のように変数を置く。
+
+\begin{align*}
+    V'_{B1} - V'_{A1} + \delta_H (V'_{B2} - V'_{A2}) &\equiv X' < 0\\
+    \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) &\equiv Y' > 0\\
+    V_{B1} - V_{A1} + \delta_H (V_{B2} - V_{A2}) &\equiv X > 0\\
+    \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) &\equiv Y > 0\\[1em]
+    \frac{X'}{Y'} < 0,\quad \frac{X}{Y} > 0
+\end{align*}
+
+すると差分は
+\begin{align*}
+    &= p\{ \frac{ \alpha - \beta }{ Y' } \}( -X' )  + \{(1-p) \frac{ Y-\alpha + \beta }{ Y } \}(-X )\\[1em]
+    &= -p \frac{ \alpha - \beta }{ Y' } X'  -    (1-p) \frac{ Y  -\alpha + \beta }{ Y }X\\[1em]
+    &= -p \frac{ X'(\alpha - \beta) }{ Y' }  -    (1-p) \frac{ XY + X(-\alpha + \beta) }{ Y }\\[1em]
+    &= -p \frac{ X'(\alpha - \beta) }{ Y' }  -    (1-p) \frac{ XY - X(\alpha - \beta) }{ Y }\\[1em]
+    &= -p \frac{ X'(\alpha - \beta) }{ Y' }  -    \frac{ XY - X(\alpha - \beta) }{ Y } + p\frac{ XY - X(\alpha - \beta) }{ Y } \\[1em]
+    &= p \Big\{  \frac{ XY - X(\alpha - \beta) }{ Y } - \frac{ X'(\alpha - \beta) }{ Y' } \Big\}  -    \frac{ XY - X(\alpha - \beta) }{ Y }  \\[1em]
+    &= \frac{1}{Y'Y} \Big\{ p \{   XY'Y - XY'(\alpha - \beta)  - X'Y(\alpha - \beta)  \}  -     XY'Y - XY'(\alpha - \beta) \Big\} \\
+\end{align*}
+
+
+$Y'Y>0$なので、それ以外の式の正負を考える。
+\begin{align*}
+    &p \{   XY'Y - XY'(\alpha - \beta)  - X'Y(\alpha - \beta)  \}  -     XY'Y - XY'(\alpha - \beta) \\[1em]
+    &= p \Big\{   XY' \{Y -(\alpha - \beta)\}  - X'Y(\alpha - \beta)  \Big\}  -     XY'Y - XY'(\alpha - \beta) \\[1em]
+    &= p \Big\{   XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta)  \Big\}  -     XY'Y - XY'(\alpha - \beta) \\[1em]
+\end{align*}
+
+$Y -\alpha + \beta$の正負を考える。
+\begin{align*}
+    &Y -\alpha + \beta\\
+    &= \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) -\alpha + \beta\\[1em]
+    &= V_{B1}-V_{A1} + \delta_{内閣}(V_{B2} - V_{A2}) \\
+\end{align*}
+
+仮定7より、
+\begin{align*}
+    &V_{A1} + \delta_{市民} V_{A2} < V_{B1} + \delta_{市民} V_{B2} \quad{ただし}\quad 0 \le \delta_{市民}\le 1\\
+    & 0 <  V_{B1} - V_{A1}+ \delta_{市民} V_{B2} -  \delta_{市民} V_{A2}\\
+    & 0 <  V_{B1} - V_{A1}+ \delta_{市民} (V_{B2} - V_{A2})\\
+    0 \le \delta_{内閣} \le 1 なので、\\
+    & 0 <  V_{B1} - V_{A1}+ \delta_{内閣} (V_{B2} - V_{A2})
+\end{align*}
+
+よって、$Y -\alpha + \beta>0$,
+また$ XY' >0, \quad - X'Y(\alpha - \beta)>0$であるから、\\
+$p \Big\{   XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta)  \Big\}  -     XY'Y - XY'(\alpha - \beta) > 0$ となる条件は、
+\begin{align*}
+&p \Big\{   XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta)  \Big\}  -     XY'Y - XY'(\alpha - \beta) > 0 \\[1em]
+&p \Big\{   XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta)  \Big\}   > XY'Y + XY'(\alpha - \beta) \\[1em]
+&p  > \frac{XY'Y + XY'(\alpha - \beta)}{XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta) } 
+\end{align*}
+
+
+よって、国会の最適反応は
+\begin{align*}
+    \begin{cases}
+        (5)\; p  > \frac{XY'Y + XY'(\alpha - \beta)}{XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta) }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (6)\; p  < \frac{XY'Y + XY'(\alpha - \beta)}{XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta) } &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+    \end{cases}
+\end{align*}
+
+
+
+\bigskip
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    & E[u_{国会}(a_{国会}=A, \delta_{市民}=\delta_H) | m_{内閣} = B  ] - E[u_{国会}(a_{国会}=B, \delta_{市民}=\delta_H) | m_{内閣} = B  ]\\[1em]
+    &= \frac{ \{(1-e)p(1-r_{有事}) +  (1-f)pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-g)(1-p)(1-r_{平時}) + (1-h)(1-p)r_{平時}\}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ ep(1-r_{有事}) + fpr_{有事} + g(1-p)(1-r_{平時}) + h(1-p)r_{平時} }\\[1em]
+    &= \frac{ \{ pr_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-r_{有事})  + (1-p)r_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)(1-r_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-r_{有事}) + (1-p)r_{平時} }
+\end{align*}
+
+
+
+また、$T^*$が全て内点にある時、$r_{有事}=T^*_{有事}, \quad r_{平時} = T^*_{平時}$となるので、
+
+\begin{align*}
+    &= \frac{ \{ pT^*_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})  }{ p(1-T^*_{有事})  + (1-p)T^*_{平時} }\\[1em]
+    &\quad + \frac{ \{(1-p)(1-T^*_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) }{ p(1-T^*_{有事}) + (1-p)T^*_{平時} }
+\end{align*}
+
+分母は正になるので、分子だけを考える。
+\begin{align*}
+    &\{ pT^*_{有事}\}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})    +   \{(1-p)(1-T^*_{平時}) \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} ) \\[1em]
+    &= \{ p \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} } \}(V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2})\\[1em]
+    &\quad + \{(1-p) \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} } \}(V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} )
+\end{align*}
+
+上と同じように、見やすくするために$X',Y',X,Y$で置換すると
+\begin{align*}
+    &= \{ p \frac{ Y'-\alpha+\beta }{ Y' } \}( -X' ) + \{(1-p) \frac{ \alpha-\beta }{ Y } \}(-X )\\[1em]
+    &= \{ -p \frac{ X'Y' + X'(-\alpha+\beta) }{ Y' } \} - \{(1-p) \frac{ X(\alpha-\beta) }{ Y } \}\\[1em]
+    &= \{ -p \frac{ X'Y' - X'(\alpha-\beta) }{ Y' } \} - \{(1-p) \frac{ X(\alpha-\beta) }{ Y } \}\\[1em]
+    &= \frac{1}{Y'Y} \Big\{ \{ -p X'Y'Y + pX'Y(\alpha-\beta)  \} - \{(1-p) XY'(\alpha-\beta)  \}  \Big\} \\[1em]
+\end{align*}
+
+$Y'Y>0$なので、残りの式の正負を考える。
+\begin{align*}
+    &-p X'Y'Y + pX'Y(\alpha-\beta)  - \{(1-p) XY'(\alpha-\beta)  \}  \\[1em]
+    &= -p X'Y'Y + pX'Y(\alpha-\beta)  - \{ XY'(\alpha-\beta) - pXY'(\alpha-\beta)  \}  \\[1em]
+    &= -p X'Y'Y + pX'Y(\alpha-\beta)  - XY'(\alpha-\beta) + pXY'(\alpha-\beta)   \\[1em]
+    &= p \{  XY'(\alpha-\beta)  + X'Y(\alpha-\beta) - X'Y'Y   \} - XY'(\alpha-\beta)\\[1em]
+    &= p \Big\{  X'Y\{ (\alpha-\beta) - Y' \} +XY'(\alpha-\beta) \Big\} - XY'(\alpha-\beta)\\[1em]
+    &= p \Big\{  -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) \Big\} - XY'(\alpha-\beta)\\
+\end{align*}
+
+$Y' - (\alpha-\beta)$ の正負を考える。
+\begin{align*}
+    &Y' - (\alpha-\beta)\\
+    &= \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2}) - (\alpha-\beta) \\[1em]
+    &=  V'_{B1}-V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2})  \\[1em]
+\end{align*}
+
+$T^*$が全て内点に存在する場合、有事-(i)かつ平時-(i)の条件の成立が必要。
+そのうちの一つに、$0 \le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$ がある。
+\begin{align*}
+    &0 \le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}\\[1em]
+    &\delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}\\[1em]
+    &\delta_{内閣}(V'_{A2} - V'_{B2}) < V'_{B1} - V'_{A1}\\[1em]
+    & 0 < V'_{B1} - V'_{A1} - \delta_{内閣}(V'_{A2} - V'_{B2})\\[1em]
+    & 0 < V'_{B1} - V'_{A1} + \delta_{内閣}(V'_{B2} - V'_{A2})\\[1em]
+\end{align*}
+よって、$Y' - (\alpha-\beta)>0$。また、$-X'Y>0, \quad XY'(\alpha-\beta)>0$なので、\\
+$p \Big\{  -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) \Big\} - XY'(\alpha-\beta)>0$ となる条件は、
+
+\begin{align*}
+    & p \Big\{  -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) \Big\} - XY'(\alpha-\beta)>0\\[1em]
+    & p \Big\{  -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) \Big\}  >  XY'(\alpha-\beta)\\[1em]
+    & p >  \frac{ XY'(\alpha-\beta) }{ -X'Y\{ Y' - (\alpha-\beta)  \} +XY'(\alpha-\beta) }\\[1em]
+    & p >  \frac{ XY'(\alpha-\beta) }{ -X'Y\{ Y' - \alpha+ \beta  \} +XY'(\alpha-\beta) }\\[1em]
+    & p >  \frac{ XY'(\alpha-\beta) }{ XY'(\alpha-\beta) -X'Y\{ Y' - \alpha+ \beta  \} }\\[1em]
+\end{align*}
+
+
+よって、$T^*$が全て内点の場合の、国会の期待値の差分は以下になる。
+\begin{align*}
+    \begin{cases}
+        (7)\;  p >  \frac{ XY'(\alpha-\beta) }{ XY'(\alpha-\beta) -X'Y\{ Y' - \alpha+ \beta  \} } \quad\Rightarrow\quad 全体>0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        (8)\;  p <  \frac{ XY'(\alpha-\beta) }{ XY'(\alpha-\beta) -X'Y\{ Y' - \alpha+ \beta  \} } \quad\Rightarrow\quad 全体<0 &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+\bigskip
+まとめると、\\
+\noindent
+(i)$m_{内閣}=A$の場合：
+\begin{align*}
+    \begin{cases}
+        (5)\; p  > \frac{XY'Y + XY'(\alpha - \beta)}{XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta) }   &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = A\\[0.5em]
+        (6)\; p  < \frac{XY'Y + XY'(\alpha - \beta)}{XY' (Y -\alpha + \beta)  - X'Y(\alpha - \beta) } &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = A) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+\noindent
+(ii)$m_{内閣}=B$の場合：
+\begin{align*}
+    \begin{cases}
+        (7)\;  p >  \frac{ XY'(\alpha-\beta) }{ XY'(\alpha-\beta) -X'Y\{ Y' - \alpha+ \beta  \} }  &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = A\\[0.5em]
+        (8)\;  p <  \frac{ XY'(\alpha-\beta) }{ XY'(\alpha-\beta) -X'Y\{ Y' - \alpha+ \beta  \} } &\quad\Rightarrow\quad a^*_{国会}(\delta_H|m_{内閣} = B) = B\\[0.5em] 
+     \end{cases}
+\end{align*}
+
+
+内閣の最適反応は、有事・平時の場合ごとにそれぞれ以下の期待値の差分によって決まる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y)\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q(x-y)\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
+\end{align*}
+
+
+ここでは$T^*$が全て内点に存在する場合を考えているので、どちらの場合でも有事-(i),平時-(i)の条件より、$T$の係数は正である。
+よって国会の最適反応を所与とした、内閣の最適反応は以下となる。
+\begin{align*}
+    \begin{cases}
+        (5),(7)が成立 &\Rightarrow (x,y)=(1,1) \quad \Rightarrow 差分=0で無差別\\
+        (5),(8)が成立 &\Rightarrow (x,y)=(1,0) \quad \Rightarrow T>T^* なら m^*_{内閣}=A,\;\; T<T^* なら m^*_{内閣}=B\\
+        (6),(7)が成立 &\Rightarrow (x,y)=(0,1) \quad \Rightarrow T>T^* なら m^*_{内閣}=B,\;\; T<T^* なら m^*_{内閣}=A\\
+        (6),(8)が成立 &\Rightarrow (x,y)=(0,0) \quad \Rightarrow 差分=0で無差別\\
+     \end{cases}
+\end{align*}
+
+いま検討している戦略は以下であった。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow A\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow B\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow B\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow A
+    \end{cases}
+\end{align*}
+
+内閣の最適反応が無差別となる場合はここでは除外する。
+
+この内閣の戦略が均衡となるには、有事で(5),(8), および平時で(6),(7)の成立が必要である。
+しかし、(5)と(6)、(7)と(8)はどちらか片方しか成立し得ない。また有事・平時で変化しない。
+よって、この戦略3.(A,B,B,A)は$T^*$が全て内点に存在する場合には均衡にならない。
+
+
+
+
+
+
+
+
+\bigskip
+\noindent
+\underline{戦略.4 (B,A,A,B)}
+
+%TODO: 上と同じように計算する。
+
+次の戦略を考える。
+\begin{align*}
+    \begin{cases}
+        (W=有事) かつ (T>T^*_{有事})  \rightarrow B\\
+        (W=有事) かつ (T<T^*_{有事})  \rightarrow A\\
+        (W=平時) かつ (T>T^*_{平時})  \rightarrow A\\
+        (W=平時) かつ (T<T^*_{平時})   \rightarrow B\\
+    \end{cases}
+\end{align*}
+
+この時、仮置きしておいた内閣の行動の確率は$(e,f,g,h) = (0,1,1,0)$となる。
+
+
+戦略.1と戦略.2は真反対の戦略で、その結果、戦略.1での$(i)m_{内閣}=A$における国会の期待値と、戦略.2での$(ii)m_{内閣}=B$における国会の期待値が等くなった。
+これは、国会の期待値の差分の式では、内閣の戦略を固定することによって決まる4つの変数$e,f,g,h$が、$p:1-p,\; r^*;1-r^*$という2つの変数で平均をとっているからである。
+そのため、$e$か$f$、$g$か$h$が0と1の値を同じように取ることで、分子全体としての増減が一定になるためである。
+
+これと同じことが戦略.3と戦略.4にも言える。
+具体的には、この戦略.4が均衡となるには、有事で(6),(7), および平時で(5),(6)の成立が必要となる。
+しかし、(5)と(6)、(7)と(8)はどちらか片方しか成立し得ない。また有事・平時で変化しない。
+よって、この戦略4.(B,A,A,B)は$T^*$が全て内点に存在する場合には均衡にならない。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{考察}
+均衡を考察する。
+
+戦略.1（A,B,A,B）では、国会は内閣のメッセージをそのまま承認することが最適反応であった。
+この時、$(x, y) = (1,0)$となるため、内閣の有事における期待値は以下のようになる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q(x-y) \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace\\
+    &= q \lbrace T(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) + V'_{A1} - V'_{B1} + \delta_{内閣}(V'_{A2} - V'_{B2})  \rbrace 
+\end{align*}
+これを内閣の私欲（独自の正義感）パラメーター$T$で微分すると、
+$$ q(\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}) $$
+$q$は市民が賢民($\delta_H$)になる確率を表す。
+$T^*$が全て内点に存在する場合、$\alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2}>0$となるので、この値は正の値を取る。
+つまり、私欲が増せば増すほど、内閣は予防的政策(A)を主張しやすくなる。これは、内点の仮定から生じた条件$\alpha>\beta$、つまり内閣は予防的政策(A)を世界の状況に関係なく選好していることが理由に挙げられる。
+
+また別の見方では、この内閣は実は有事であっても、非予防的政策(B)を選好する部分がある。それは、内点の仮定の$0\le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$から生じる。
+この条件は、内閣の時間割引率が低いことを表しており、有事において社会厚生的に頓珍漢な振る舞いをする可能性があるということだ。\\
+しかし、こういった頓珍漢な内閣であっても、有事においては私欲が強い内閣が政権を握ることで結果的に市民が喜ぶこともある。
+その際に重要な点は、このモデルでは共有情報としている$\alpha, \beta$、つまり政治家ごとの方針の好みを正確に把握することが重要である。
+また、市民および国会にとっては観測できない内閣の私欲パラメータも、実際にはメッセージなどの歴史を通じて、ある程度が予想できるだろう。
+
+
+平時においては、内閣の期待値は以下のようになる。
+\begin{align*}
+    &E[u_{内閣}(m_{内閣}=A|W=有事)] - E[u_{内閣}(m_{内閣}=B|W=有事)] \\
+    &= q\lbrace T(\alpha -V_{A1} -\delta_{内閣}V_{A2} - \beta + V_{B1} + \delta_{内閣}V_{B2}) + V_{A1} + \delta_{内閣}V_{A2} - V_{B1} - \delta_{内閣}V_{B2}  \rbrace\\
+    &= q\lbrace T(\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   ) + V_{A1} - V_{B1} + \delta_{内閣}(V_{A2}  - V_{B2})  \rbrace
+\end{align*}
+
+これも$T$で微分すると、
+$$q\lbrace (\alpha - \beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} -\delta_{内閣}V_{A2}   )$$
+となり、有事と同じことが言える。
+
+また、この2つの均衡に共通して言えることは、内閣の時間割引率$\delta_{内閣}$が賢民の時間割引率$\delta_H$よりも低くなる必要があるということである。
+これは、$T^*$が全て内点に存在する場合には、$0\le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$を満たす必要があることが理由である。
+この値はどれくらい低いかというと、ちょうど市民が愚民($\delta_L$)である時の時間割引率の範囲と等しい。
+つまりこれらの均衡での内閣は、とても近視眼的な選好を持っていることがわかる。
+
+
+
+% \subsection{その他の均衡}
+
+% $T^*$が全て内点にある場合では、$0\le \delta_{内閣} < \frac{V'_{B1} - V'_{A1}}{V'_{A2} - V'_{B2}}$の仮定から、
+% 近視眼的な内閣しか分析することができなかった。そこで、この仮定が外れるような状況を考えて均衡を分析する。
+
+
+% 例えば、以下の例が挙げられる。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+% WIPメモ
+
+% - TODO：全て内点では、$\delta_{内閣}$が小さくなる。→そうでないのもいくつかみる。おもしろなのに当たりをつけて調べる。
+
+% \begin{align*}
+%     \frac{ p( \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} ) }{ (1-p)( \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} ) }    >    - \frac{ V_{A1} - V_{B1} + \delta_H V_{A2} - \delta_H V_{B2} }{ V'_{A1} -V'_{B1} + \delta_H V'_{A2} - \delta_H V'_{B2} } \\[1em]
+% \end{align*}
+
+
+
+
+% \begin{definition} \Large$T^*_{有事} = \frac{ V'_{B1} - V'_{A1} +\delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+% \begin{definition} \Large$1 - T^*_{有事} = \frac{ \alpha-\beta }{ \alpha-\beta + V'_{B1}-V'_{A1} + \delta_{内閣}V'_{B2} - \delta_{内閣}V'_{A2} }$ \end{definition}
+
+
+% \begin{definition} \Large$T^*_{平時} = \frac{ V_{B1} - V_{A1} +\delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
+% \begin{definition} \Large$1 - T^*_{平時} = \frac{ \alpha-\beta }{ \alpha-\beta + V_{B1}-V_{A1} + \delta_{内閣}V_{B2} - \delta_{内閣}V_{A2} }$ \end{definition}
+
 
 
 
